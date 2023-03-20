@@ -4,19 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" afterDir="false" />
+    <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AbstractCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AverageOfHealthCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ClearCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/CountAchievementsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExecuteScriptCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/FilterGreaterHealthCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HelpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HistoryCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/InfoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveGreaterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/SaveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ShowCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/UpdateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/AstartesCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/SpaceMarine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,14 +38,27 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="f0ad4669-8e92-4cf8-b8d5-45776afad490" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2NC4U1OYBF1HBw42DCVa6viNNg3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,12 +67,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -62,11 +89,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679154741824</updated>
-      <workItem from="1679154743025" duration="771000" />
+      <workItem from="1679154743025" duration="1432000" />
+      <workItem from="1679334591776" duration="2360000" />
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <created>1679155532116</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679155532116</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
 </project>
