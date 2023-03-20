@@ -1,4 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
-public class AbstractCommand {
+import java.util.TreeSet;
+
+public abstract class AbstractCommand {
+    public abstract void execute(TreeSet<String, String> args);
 }
