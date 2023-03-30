@@ -1,6 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.model;
 
-public enum AstartesCategory {
+public enum
+AstartesCategory {
     SCOUT("Разведчик"),
     AGGRESSOR("Агрессор"),
     SUPPRESSOR("Подавитель"),
