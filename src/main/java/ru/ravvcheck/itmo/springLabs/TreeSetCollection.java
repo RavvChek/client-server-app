@@ -20,9 +20,20 @@ public class TreeSetCollection {
         date = new Date();
     }
 
-    public TreeSet<SpaceMarine> getCollection(){
+    public TreeSet<SpaceMarine> getCollection() {
         return data;
+    }
 
+    public Date getData() {
+        return date;
+    }
 
+    public int getCount() {
+        count = data.size();
+        return count;
+    }
+
+    public String getType() {
+        return type;
     }
 }
