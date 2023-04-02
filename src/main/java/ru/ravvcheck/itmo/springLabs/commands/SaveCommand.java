@@ -1,8 +1,10 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
+import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+
 public class SaveCommand extends AbstractCommand{
-    public SaveCommand(String name, String description) {
-        super(name, description);
+    public SaveCommand(LinkedListCollection database) {
+        super("save", "Сохранить коллекцию в файл", database);
     }
 
     @Override

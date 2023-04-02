@@ -1,8 +1,10 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
+import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+
 public class AddCommand extends AbstractCommand {
-    public AddCommand(String name, String description) {
-        super(name, description);
+    public AddCommand(LinkedListCollection database) {
+        super("add", "Добавить новый элемент в коллекцию", database);
     }
 
     @Override

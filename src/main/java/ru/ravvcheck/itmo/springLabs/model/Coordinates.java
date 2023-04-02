@@ -3,14 +3,14 @@ package ru.ravvcheck.itmo.springLabs.model;
 import java.util.Objects;
 
 public class Coordinates {
-    private Integer x; //Поле не может быть null
+    private float x;
     private Double y; //Значение поля должно быть больше -903, Поле не может быть null
 
-    public Integer getX() {
+    public float getX() {
         return x;
     }
 
-    public void setX(Integer x) {
+    public void setX(float x) {
         this.x = x;
     }
 
@@ -38,7 +38,7 @@ public class Coordinates {
     @Override
     public String toString() {
         return "Coordinates{" +
-                "x=" + x.toString() +
+                "x=" + x +
                 ", y=" + y.toString() +
                 '}';
     }

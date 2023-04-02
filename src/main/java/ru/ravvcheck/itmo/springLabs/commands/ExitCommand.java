@@ -1,8 +1,10 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
+import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+
 public class ExitCommand extends AbstractCommand{
-    public ExitCommand(String name, String description) {
-        super(name, description);
+    public ExitCommand(LinkedListCollection database) {
+        super("exit", "Завершить программу (без сохранения в файл)", database);
     }
 
     @Override

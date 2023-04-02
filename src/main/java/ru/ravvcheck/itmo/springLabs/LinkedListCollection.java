@@ -4,23 +4,23 @@ import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
 import java.util.Date;
-import java.util.TreeSet;
+import java.util.LinkedList;
 
-public class TreeSetCollection {
+public class LinkedListCollection {
     private final DataReader dataReader;
-    private final TreeSet<SpaceMarine> data;
+    private final LinkedList<SpaceMarine> data;
     private final String type;
     private final Date date;
     private int count;
 
-    public TreeSetCollection(DataReader dataReader) {
+    public LinkedListCollection(DataReader dataReader) {
         this.dataReader = dataReader;
         data = dataReader.getData();
         type = SpaceMarine.class.getName();
         date = new Date();
     }
 
-    public TreeSet<SpaceMarine> getCollection() {
+    public LinkedList<SpaceMarine> getCollection() {
         return data;
     }
 

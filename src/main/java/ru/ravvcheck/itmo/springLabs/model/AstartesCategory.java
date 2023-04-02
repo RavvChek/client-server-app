@@ -3,9 +3,9 @@ package ru.ravvcheck.itmo.springLabs.model;
 public enum
 AstartesCategory {
     SCOUT("Разведчик"),
-    AGGRESSOR("Агрессор"),
+    ASSAULT("Атакующий"),
     SUPPRESSOR("Подавитель"),
-    TACTICAL("Тактический");
+    APOTHECARY("Аптекарь");
     private String name;
 
     AstartesCategory(String name) {

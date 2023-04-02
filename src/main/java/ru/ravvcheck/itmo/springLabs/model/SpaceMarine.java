@@ -1,24 +1,24 @@
 package ru.ravvcheck.itmo.springLabs.model;
 
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 public class SpaceMarine {
-    private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
-    private java.time.LocalDate creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-    private Long health; //Поле может быть null, Значение поля должно быть больше 0
-    private long heartCount; //Значение поля должно быть больше 0, Максимальное значение поля: 3
+    private java.time.ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    private Integer health; //Поле может быть null, Значение поля должно быть больше 0
+    private int heartCount; //Значение поля должно быть больше 0, Максимальное значение поля: 3
     private String achievements; //Поле не может быть null
     private AstartesCategory category; //Поле может быть null
     private Chapter chapter; //Поле не может быть null
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,27 +38,27 @@ public class SpaceMarine {
         this.coordinates = coordinates;
     }
 
-    public LocalDate getCreationDate() {
+    public ZonedDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
+    public void setCreationDate(ZonedDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
-    public Long getHealth() {
+    public Integer getHealth() {
         return health;
     }
 
-    public void setHealth(Long health) {
+    public void setHealth(Integer health) {
         this.health = health;
     }
 
-    public long getHeartCount() {
+    public int getHeartCount() {
         return heartCount;
     }
 
-    public void setHeartCount(long heartCount) {
+    public void setHeartCount(int heartCount) {
         this.heartCount = heartCount;
     }
 
@@ -104,13 +104,13 @@ public class SpaceMarine {
         return "SpaceMarine{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", coordinates=" + coordinates.toString() +
-                ", creationDate=" + creationDate.toString() +
-                ", health=" + health.toString() +
+                ", coordinates=" + coordinates +
+                ", creationDate=" + creationDate +
+                ", health=" + health +
                 ", heartCount=" + heartCount +
-                ", achievements='" + achievements.toString() + '\'' +
-                ", category=" + category.toString() +
-                ", chapter=" + chapter.toString() +
+                ", achievements='" + achievements + '\'' +
+                ", category=" + category +
+                ", chapter=" + chapter +
                 '}';
     }
 }

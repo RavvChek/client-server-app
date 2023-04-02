@@ -3,9 +3,8 @@ package ru.ravvcheck.itmo.springLabs.model;
 import java.util.Objects;
 
 public class Chapter {
-    private String name; //Поле не может быть null, Cтрока не может быть пустой
-    private Integer marinesCount; //Поле может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 1000
-
+    private String name; //Поле не может быть null, Строка не может быть пустой
+    private long marinesCount; //Значение поля должно быть больше 0, Максимальное значение поля: 1000
 
     public String getName() {
         return this.name;
@@ -15,11 +14,12 @@ public class Chapter {
         this.name = name;
     }
 
-    public Integer getMarinesCount() {
+    public long getMarinesCount() {
         return this.marinesCount;
     }
 
-    public void setMarinesCount(Integer marinesCount) {
+
+    public void setMarinesCount(long marinesCount) {
         this.marinesCount = marinesCount;
     }
 
@@ -40,7 +40,7 @@ public class Chapter {
     public String toString() {
         return "Chapter{" +
                 "name='" + name + '\'' +
-                ", marinesCount=" + marinesCount.toString() +
+                ", marinesCount=" + marinesCount +
                 '}';
     }
 }
