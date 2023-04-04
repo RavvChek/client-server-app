@@ -1,10 +1,11 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
 
 public class AddCommand extends AbstractCommand {
-    public AddCommand(LinkedListCollection database) {
-        super("add", "Добавить новый элемент в коллекцию", database);
+    public AddCommand(Supervisor supervisor) {
+        super("add", "Добавить новый элемент в коллекцию", supervisor);
     }
 
     @Override

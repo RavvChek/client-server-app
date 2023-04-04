@@ -1,10 +1,11 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
 
 public class ShowCommand extends AbstractCommand{
-    public ShowCommand(LinkedListCollection database) {
-        super("show", "Вывести в стандартный поток вывода все элементы коллекции в строковом представлении", database);
+    public ShowCommand(Supervisor supervisor) {
+        super("show", "Вывести в стандартный поток вывода все элементы коллекции в строковом представлении", supervisor);
     }
 
     @Override

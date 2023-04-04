@@ -1,10 +1,11 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
 
 public class ExecuteScriptCommand extends AbstractCommand{
-    public ExecuteScriptCommand(LinkedListCollection database) {
-        super("execute_script", "Считать и исполнить скрипт из указанного файла.", database);
+    public ExecuteScriptCommand(Supervisor supervisor) {
+        super("execute_script", "Считать и исполнить скрипт из указанного файла.", supervisor);
     }
 
     @Override

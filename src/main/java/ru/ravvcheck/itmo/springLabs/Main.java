@@ -6,7 +6,7 @@ import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
 
 public class Main {
     public static void main(String[] args) {
-        DataReader reader = new DataReader();
-        Supervising  supervisor = new Supervisor();
+        var reader = new DataReader();
+        var supervisor = new Supervisor(reader);
     }
 }

@@ -6,4 +6,5 @@ import java.util.LinkedList;
 
 public abstract class DataReader {
     public abstract LinkedList<SpaceMarine> getData();
+    public abstract void saveData();
 }
