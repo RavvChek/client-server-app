@@ -13,18 +13,18 @@ public class LinkedListCollection {
     private final Date date;
     private int count;
 
-    public LinkedListCollection(DataReader dataReader) {
+    public LinkedListCollection(DataReader dataReader) throws Exception {
         this.dataReader = dataReader;
         data = dataReader.getData();
         type = SpaceMarine.class.getName();
         date = new Date();
     }
 
-    public LinkedList<SpaceMarine> getCollection() {
+    public LinkedList<SpaceMarine> getData() {
         return data;
     }
 
-    public Date getData() {
+    public Date getDate() {
         return date;
     }
 
@@ -35,5 +35,18 @@ public class LinkedListCollection {
 
     public String getType() {
         return type;
+    }
+
+    public void clearData() {
+        data.clear();
+    }
+
+    public void saveData() {
+        dataReader.saveData();
+    }
+    public void show(){
+        for (SpaceMarine sp : data){
+            System.out.println(sp.toString());
+        }
     }
 }

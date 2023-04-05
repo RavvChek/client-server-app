@@ -10,6 +10,6 @@ public class SaveCommand extends AbstractCommand{
 
     @Override
     public void execute() {
-
+        this.supervisor.getDatabase().saveData();
     }
 }

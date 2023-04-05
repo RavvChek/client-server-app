@@ -10,7 +10,7 @@ public class ClearCommand extends AbstractCommand {
 
     @Override
     public void execute() {
-        this.supervisor.getDatabase().getCollection().clear();
+        this.supervisor.getDatabase().clearData();
         System.out.println("Коллекция очищена");
     }
 }

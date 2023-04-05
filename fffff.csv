@@ -1,0 +1,6 @@
+id;name;Coordinates.x;Coordinates.y;creationDate;health;hearCount;achievements;AstartesCategory;Chapter.name;Chapter.marinesCount
+1;Ravil;4;3;5;1000;2;cool;SCOUT;t;34
+2;Albert;5;1;5;1500;1;cool;SCOUT;n;34
+3;Stepan;9;2;5;3000;3;cool;SCOUT;g;34
+4;Alina;10;8;5;300;2;cool;SCOUT;h;34
+5;Timur;45;77;5;400;3;cool;SCOUT;j;34

@@ -1,6 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
 
 public class ShowCommand extends AbstractCommand{
@@ -10,6 +11,9 @@ public class ShowCommand extends AbstractCommand{
 
     @Override
     public void execute() {
+        for (SpaceMarine sm : this.supervisor.getCollection()) {
+            System.out.println(sm.toString());
+        }
 
     }
 }
