@@ -41,7 +41,6 @@ public class Supervisor implements Supervising {
     public Scanner getScanner() {
         return this.scanner;
     }
-
     public LinkedList<SpaceMarine> getCollection() {
         return database.getData();
     }

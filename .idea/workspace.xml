@@ -4,26 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="hueta2">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fffff.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file.csv.csv" afterDir="false" />
+    <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/TreeSetCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/TreeSetCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AbstractCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AverageOfHealthCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AverageOfHealthCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/CountAchievementsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/CountAchievementsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/FilterGreaterHealthCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/FilterGreaterHealthCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HistoryCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HistoryCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveGreaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveGreaterCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/SaveCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ShowCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/AstartesCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/AstartesCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Chapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/AbstractParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/AbstractParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/DataReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/supervisor/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/supervisor/Supervisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/UpdateCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +52,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="labSpringProg" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="labSpringProg" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -116,44 +110,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/ravil/Downloads/gradle-enterprise-gradle-plugin-3.10.2.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ravil\IdeaProjects\labSpringProg" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.ravvcheck.itmo.springLabs.Main" />
-      <module name="labSpringProg.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.ravvcheck.itmo.springLabs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="RunManager" selected="Gradle.labSpringProg [javadoc]">
     <configuration name="labSpringProg [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -175,33 +150,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="labSpringProg [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="labSpringProg [javadoc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -217,39 +171,10 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="labSpringProg [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="testClasses" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.labSpringProg [jar]" />
-      <item itemvalue="Gradle.labSpringProg [testClasses]" />
-      <item itemvalue="Gradle.labSpringProg [classes]" />
-      <item itemvalue="Gradle.labSpringProg [javadoc]" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.labSpringProg [testClasses]" />
-        <item itemvalue="Gradle.labSpringProg [jar]" />
+        <item itemvalue="Gradle.labSpringProg [javadoc]" />
+        <item itemvalue="Gradle.labSpringProg [classes]" />
         <item itemvalue="Gradle.labSpringProg [javadoc]" />
         <item itemvalue="Gradle.labSpringProg [classes]" />
       </list>
@@ -273,13 +198,7 @@
       <workItem from="1680110479251" duration="114000" />
       <workItem from="1680110671754" duration="3856000" />
       <workItem from="1680120963904" duration="2811000" />
-      <workItem from="1680154897713" duration="7043000" />
-      <workItem from="1680255748442" duration="4000" />
-      <workItem from="1680443432868" duration="12625000" />
-      <workItem from="1680615224420" duration="24795000" />
-      <workItem from="1680710750409" duration="1107000" />
-      <workItem from="1680712302635" duration="331000" />
-      <workItem from="1680714964991" duration="15046000" />
+      <workItem from="1680154897713" duration="4979000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1679155532116</created>
@@ -309,28 +228,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680129576743</updated>
     </task>
-    <task id="LOCAL-00005" summary="hot push&#10;commands and TreeSetCollection and finish model">
-      <created>1680160755030</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1680160755030</updated>
-    </task>
-    <task id="LOCAL-00006" summary="hueta">
-      <created>1680474079257</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1680474079257</updated>
-    </task>
-    <task id="LOCAL-00007" summary="hueta2">
-      <created>1680640039214</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1680640039214</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,13 +271,6 @@
     <MESSAGE value="definition packages and classes" />
     <MESSAGE value="gradle" />
     <MESSAGE value="start" />
-    <MESSAGE value="hot push&#10;commands and TreeSetCollection and finish model" />
-    <MESSAGE value="hueta" />
-    <MESSAGE value="hueta2" />
-    <option name="LAST_COMMIT_MESSAGE" value="hueta2" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <option name="LAST_COMMIT_MESSAGE" value="start" />
   </component>
 </project>
