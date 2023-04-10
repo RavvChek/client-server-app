@@ -6,24 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/TreeSetCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/TreeSetCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fffff.csv" beforeDir="false" afterPath="$PROJECT_DIR$/fffff.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AbstractCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AverageOfHealthCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AverageOfHealthCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ClearCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/CountAchievementsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/CountAchievementsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/FilterGreaterHealthCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/FilterGreaterHealthCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HistoryCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HistoryCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/InfoCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveGreaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveGreaterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/SaveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ShowCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/UpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMinCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMinCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/DataReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +162,10 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.labSpringProg [classes]" />
+      <item itemvalue="Gradle.labSpringProg [javadoc]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.labSpringProg [javadoc]" />

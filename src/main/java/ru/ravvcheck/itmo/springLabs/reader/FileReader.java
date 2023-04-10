@@ -1,8 +1,13 @@
 package ru.ravvcheck.itmo.springLabs.reader;
 
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -38,7 +43,15 @@ public class FileReader extends DataReader {
     }
 
     @Override
-    public void saveData() {
-
+    public void saveData(LinkedList<SpaceMarine> value) throws Exception {
+        if (!Files.isWritable(file.toPath())) {
+            throw new Exception();
+        }
+        try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file))) {
+            StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+            beanToCsv.write(value);
+        } catch (IOException e) {
+            System.out.println();
+        }
     }
 }

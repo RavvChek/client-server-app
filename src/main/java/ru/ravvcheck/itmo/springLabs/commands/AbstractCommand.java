@@ -20,5 +20,5 @@ public abstract class AbstractCommand implements Command {
         return name + ": " + description;
     }
 
-    public abstract void execute(String[] args);
+    public abstract void execute();
 }

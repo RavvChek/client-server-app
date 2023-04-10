@@ -17,5 +17,5 @@ public abstract class DataReader {
     protected String filePath;
 
     public abstract LinkedList<SpaceMarine> getData() throws Exception;
-    public abstract void saveData();
+    public abstract void saveData(LinkedList<SpaceMarine> values) throws Exception;
 }
