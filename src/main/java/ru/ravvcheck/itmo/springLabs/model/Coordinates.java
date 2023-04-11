@@ -49,4 +49,14 @@ public class Coordinates {
                 ", y=" + y.toString() +
                 '}';
     }
+    public static class CoordinatesValidation {
+        public static void validate(Coordinates coordinates) throws Exception {
+            validateY(coordinates.getY());
+        }
+        public static void validateY(Double y) throws Exception {
+            if (y < -903 || y == null){
+                throw new Exception();
+            }
+        }
+    }
 }

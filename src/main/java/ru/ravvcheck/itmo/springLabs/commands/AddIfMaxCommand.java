@@ -1,7 +1,10 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
+
+import java.util.LinkedList;
 
 
 public class AddIfMaxCommand extends AbstractCommand {
@@ -11,6 +14,7 @@ public class AddIfMaxCommand extends AbstractCommand {
 
     @Override
     public void execute() {
-
+        LinkedList<SpaceMarine> list = supervisor.getCollection();
+        if (list.getLast().compareTo())
     }
 }

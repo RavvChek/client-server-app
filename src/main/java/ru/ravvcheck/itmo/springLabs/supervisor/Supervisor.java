@@ -12,13 +12,13 @@ import java.util.Scanner;
 
 public class Supervisor implements Supervising {
     private final LinkedListCollection database;
-    private final Scanner scanner;
+    private static Scanner scanner;
     private List<Command> commandList;
     private boolean active;
 
     public Supervisor(DataReader reader) throws Exception {
         this.database = new LinkedListCollection(reader);
-        this.scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         this.commandList = new ArrayList<>();
         commandList.add(new AddCommand(this));
         commandList.add(new AddIfMaxCommand(this));
@@ -38,8 +38,8 @@ public class Supervisor implements Supervising {
         commandList.add(new UpdateCommand(this));
     }
 
-    public Scanner getScanner() {
-        return this.scanner;
+    public static Scanner getScanner() {
+        return scanner;
     }
     public LinkedList<SpaceMarine> getCollection() {
         return database.getData();
@@ -65,6 +65,8 @@ public class Supervisor implements Supervising {
     @Override
     public void waitCommand() {
         System.out.print(">>>");
+        AbstractCommand command = null;
+        String commandName;
 
     }
 }

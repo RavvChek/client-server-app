@@ -50,4 +50,23 @@ public class Chapter {
                 ", marinesCount=" + marinesCount +
                 '}';
     }
+
+    public static class ChapterValidation {
+        public static void validate(Chapter chp) throws Exception {
+            validateName(chp.getName());
+            validateMarinesCount(chp.getMarinesCount());
+        }
+
+        public static void validateName(String name) throws Exception {
+            if (name == null || name.equals("")) {
+                throw new Exception();
+            }
+        }
+
+        public static void validateMarinesCount(long mrcount) throws Exception {
+            if (mrcount < 0 || mrcount > 1000) {
+                throw new Exception();
+            }
+        }
+    }
 }

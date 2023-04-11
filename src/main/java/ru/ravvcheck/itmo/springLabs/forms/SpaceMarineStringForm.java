@@ -1,4 +1,4 @@
-package ru.ravvcheck.itmo.springLabs.validation;
+package ru.ravvcheck.itmo.springLabs.forms;
 
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 

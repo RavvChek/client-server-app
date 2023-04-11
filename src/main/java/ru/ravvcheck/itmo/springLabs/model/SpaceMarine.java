@@ -1,6 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.model;
 
 import java.time.ZonedDateTime;
+import java.util.LinkedList;
 import java.util.Objects;
 
 public class SpaceMarine {
@@ -17,6 +18,21 @@ public class SpaceMarine {
     private String achievements; //Поле не может быть null
     private AstartesCategory category; //Поле может быть null
     private Chapter chapter; //Поле не может быть null
+
+    public SpaceMarine(int id, String name, Coordinates coordinates, ZonedDateTime creationDate, Integer health, int heartCount, String achievements, AstartesCategory category, Chapter chapter) {
+        this.id = id;
+        this.name = name;
+        this.coordinates = coordinates;
+        this.creationDate = creationDate;
+        this.health = health;
+        this.heartCount = heartCount;
+        this.achievements = achievements;
+        this.category = category;
+        this.chapter = chapter;
+    }
+    public SpaceMarine(){
+
+    };
 
     public int getId() {
         return id;
@@ -90,6 +106,22 @@ public class SpaceMarine {
         this.chapter = chapter;
     }
 
+    public void setCoordinatesX(float x) {
+        this.getCoordinates().setX(x);
+    }
+
+    public void setCoordinatesY(Double y) {
+        this.getCoordinates().setY(y);
+    }
+
+    public void setChapterName(String name) {
+        this.getChapter().setName(name);
+    }
+
+    public void setChapterMarinesCount(long mrc) {
+        this.getChapter().setMarinesCount(mrc);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -116,6 +148,94 @@ public class SpaceMarine {
                 ", category=" + category +
                 ", chapter=" + chapter +
                 '}';
+    }
+
+    public boolean compareTo(SpaceMarine spaceMarine) {
+        if (this.getHealth() > spaceMarine.getHealth()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static class SpaceMarineValidation {
+
+        public static void listValidate(LinkedList<SpaceMarine> list) throws Exception {
+            for (SpaceMarine sp : list) {
+                validate(sp);
+            }
+        }
+
+        public static void validate(SpaceMarine sp) throws Exception {
+            validateName(sp.getName());
+            validateAchievements(sp.getAchievements());
+            validateChapter(sp.getChapter());
+            validateHealth(sp.getHealth());
+            validateCreationDate(sp.getCreationDate());
+            validateHeartCount(sp.getHeartCount());
+            validateCoordinates(sp.getCoordinates());
+        }
+
+        public static void validateName(String name) throws Exception {
+            if (name.equals("") || name == null) {
+                throw new Exception();
+            }
+        }
+
+        public static void validateCoordinates(Coordinates coordinates) throws Exception {
+            if (coordinates == null) {
+                throw new Exception();
+            } else {
+                Coordinates.CoordinatesValidation.validate(coordinates);
+            }
+        }
+
+        public static void validateCreationDate(ZonedDateTime znd) throws Exception {
+            if (znd == null) {
+                throw new Exception();
+            }
+        }
+
+        public static void validateHealth(Integer health) throws Exception {
+            if (health < 0) {
+                throw new Exception();
+            }
+        }
+
+        public static void validateHeartCount(int heartCount) throws Exception {
+            if (heartCount > 3 || heartCount < 0) {
+                throw new Exception();
+            }
+        }
+
+        public static void validateAchievements(String ach) throws Exception {
+            if (ach == null) {
+                throw new Exception();
+            }
+        }
+
+        public static void validateChapter(Chapter chapter) throws Exception {
+            if (chapter == null) {
+                throw new Exception();
+            }
+            Chapter.ChapterValidation.validate(chapter);
+        }
+
+        public static AstartesCategory createValidateAstartresCategory(String astartesCategory) throws Exception {
+            AstartesCategory ac = null;
+            switch (astartesCategory) {
+                case "SCOUT":
+                    return AstartesCategory.SCOUT;
+                case "ASSAULT":
+                    return AstartesCategory.ASSAULT;
+                case "APOTHECARY":
+                    return AstartesCategory.APOTHECARY;
+                case "SUPPRESSOR":
+                    return AstartesCategory.SUPPRESSOR;
+                default:
+                    throw new Exception();
+            }
+        }
     }
 
 }

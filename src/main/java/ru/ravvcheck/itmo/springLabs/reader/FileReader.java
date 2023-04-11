@@ -1,7 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.reader;
 
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
-import ru.ravvcheck.itmo.springLabs.validation.SpaceMarineStringForm;
+import ru.ravvcheck.itmo.springLabs.forms.SpaceMarineStringForm;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -49,7 +49,7 @@ public class FileReader extends DataReader {
             }
             for(SpaceMarine sp : value){
                 for(String attr : SpaceMarineStringForm.getListAllAttr(sp)){
-                    writer.write(attr);
+                    writer.write(attr + ",");
                 }
             }
         } catch (IOException e) {

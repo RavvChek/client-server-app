@@ -1,26 +1,21 @@
 package ru.ravvcheck.itmo.springLabs.reader;
 
-import com.epam.parso.CSVDataWriter;
-import com.opencsv.CSVWriter;
 import ru.ravvcheck.itmo.springLabs.model.AstartesCategory;
-import ru.ravvcheck.itmo.springLabs.model.Chapter;
-import ru.ravvcheck.itmo.springLabs.model.Coordinates;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
+import java.time.ZonedDateTime;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
-public class Parser extends AbstractParser {
+public class Parser implements Parsing {
     @Override
-    public SpaceMarine reading(String line, Scanner scanner, String[] keys) {
+    public SpaceMarine reading(String line, Scanner scanner, String[] keys) throws Exception {
         SpaceMarine sp = new SpaceMarine();
         try (Scanner rowScanner = new Scanner(line)) {
             String[] values = rowScanner.nextLine().split(",");
             HashMap<String, String> mp = new HashMap<>();
             int i = 0;
-            for(String k : keys){
+            for (String k : keys) {
                 mp.put(k, values[i]);
                 i++;
             }
@@ -31,11 +26,11 @@ public class Parser extends AbstractParser {
                     case "NAME":
                         sp.setName(mp.get("NAME"));
                     case "COORDINATES.X":
-                        System.out.println(mp.get("COORDINATES"));
-                    case "COORDINATES.Y":
-
+                        sp.setCoordinatesX(Float.parseFloat(mp.get("COORDINATES.X")));
                     case "CREATIONDATE":
-
+                        sp.setCreationDate(ZonedDateTime.now());
+                    case "COORDINATES.Y":
+                        sp.setCoordinatesY(Double.valueOf(mp.get("COORDINATES.Y")));
                     case "HEALTH":
                         sp.setHealth(Integer.parseInt(mp.get("HEALTH")));
                     case "HEARTCOUNT":
@@ -53,11 +48,19 @@ public class Parser extends AbstractParser {
                             case "APOTHECARY":
                                 sp.setCategory(AstartesCategory.APOTHECARY);
                         }
-                    case "CHAPTER":
-                        sp.setChapter(new Chapter(values[9], Long.parseLong(values[10])));
+                    case "CHAPTER.NAME":
+                        sp.setChapterName(mp.get("CHAPTER.NAME"));
+                    case "CHAPTER.MARINESCOUNT":
+                        sp.setChapterMarinesCount(Long.parseLong(mp.get("CHAPTER.MARINESCOUNT")));
                 }
             }
         }
+        try{
+            SpaceMarine.SpaceMarineValidation.validate(sp);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
         return sp;
     }
 
