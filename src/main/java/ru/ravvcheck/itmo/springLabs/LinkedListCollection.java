@@ -5,6 +5,7 @@ import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.List;
 
 public class LinkedListCollection {
     private final DataReader dataReader;
@@ -72,7 +73,21 @@ public class LinkedListCollection {
 
     }
     public void averageOfHealth(){
-
+        try{
+            int result = 0;
+            for(SpaceMarine sp : data){
+                result += sp.getHealth();
+            }
+            result /= data.size();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
+    public void minById(){
+        for (SpaceMarine sp : data) {
+            if (sp.compareToId(sp.))
+        }
+    }
+
 }
 

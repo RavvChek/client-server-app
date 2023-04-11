@@ -10,6 +10,6 @@ public class MinByIdCommand extends AbstractCommand{
 
     @Override
     public void execute() {
-
+        supervisor.getDatabase().minById();
     }
 }

@@ -4,7 +4,7 @@ import java.time.ZonedDateTime;
 import java.util.LinkedList;
 import java.util.Objects;
 
-public class SpaceMarine {
+public class SpaceMarine implements Comparable<SpaceMarine> {
 
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
 
@@ -30,9 +30,12 @@ public class SpaceMarine {
         this.category = category;
         this.chapter = chapter;
     }
-    public SpaceMarine(){
 
-    };
+    public SpaceMarine() {
+
+    }
+
+    ;
 
     public int getId() {
         return id;
@@ -150,13 +153,35 @@ public class SpaceMarine {
                 '}';
     }
 
-    public boolean compareTo(SpaceMarine spaceMarine) {
-        if (this.getHealth() > spaceMarine.getHealth()) {
+    public boolean compareToId(SpaceMarine sp) {
+        if (this.getId() > sp.getId()) {
             return true;
         } else {
             return false;
         }
     }
+
+    @Override
+    public int compareTo(SpaceMarine sp) {
+        if (sp.getName().compareTo(this.getName()) == 0) {
+            if (sp.getHealth().compareTo(this.getHealth()) == 0) {
+                return 0;
+            }
+            else if(sp.getHealth().compareTo(this.getHealth()) > 0){
+                return 1;
+            }
+            else{
+                return -1;
+            }
+        } else if(sp.getName().compareTo(this.getName()) > 0){
+            return 1;
+        }
+        else{
+            return -1;
+        }
+
+    }
+
 
     public static class SpaceMarineValidation {
 

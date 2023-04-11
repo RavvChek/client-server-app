@@ -15,6 +15,6 @@ public class AddIfMaxCommand extends AbstractCommand {
     @Override
     public void execute() {
         LinkedList<SpaceMarine> list = supervisor.getCollection();
-        if (list.getLast().compareTo())
+        if (list.getLast().compareTo());
     }
 }
