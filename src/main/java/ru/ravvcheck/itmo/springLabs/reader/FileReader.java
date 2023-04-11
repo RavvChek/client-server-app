@@ -1,21 +1,18 @@
 package ru.ravvcheck.itmo.springLabs.reader;
 
-import com.opencsv.bean.StatefulBeanToCsv;
-import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
+import ru.ravvcheck.itmo.springLabs.validation.SpaceMarineStringForm;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 public class FileReader extends DataReader {
-
+    private String[] keys;
     {
         this.parser = new Parser();
     }
@@ -32,8 +29,7 @@ public class FileReader extends DataReader {
             throw new Exception("");
         }
         scanner = new Scanner(file);
-        String[] keyStr = scanner.nextLine().split(";");
-        keys = new ArrayList<>(List.of(keyStr));
+        keys = scanner.nextLine().split(",");
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             list.add(parser.reading(line, scanner, keys));
@@ -48,8 +44,14 @@ public class FileReader extends DataReader {
             throw new Exception();
         }
         try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file))) {
-            StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
-            beanToCsv.write(value);
+            for(String key : keys){
+                writer.write(key + ",");
+            }
+            for(SpaceMarine sp : value){
+                for(String attr : SpaceMarineStringForm.getListAllAttr(sp)){
+                    writer.write(attr);
+                }
+            }
         } catch (IOException e) {
             System.out.println();
         }

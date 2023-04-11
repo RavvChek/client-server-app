@@ -7,34 +7,43 @@ import ru.ravvcheck.itmo.springLabs.model.Chapter;
 import ru.ravvcheck.itmo.springLabs.model.Coordinates;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Parser extends AbstractParser {
     @Override
-    public SpaceMarine reading(String line, Scanner scanner, List<String> keys) {
+    public SpaceMarine reading(String line, Scanner scanner, String[] keys) {
         SpaceMarine sp = new SpaceMarine();
         try (Scanner rowScanner = new Scanner(line)) {
-            String[] values = rowScanner.nextLine().split(";");
-            for (String k : keys) {
+            String[] values = rowScanner.nextLine().split(",");
+            HashMap<String, String> mp = new HashMap<>();
+            int i = 0;
+            for(String k : keys){
+                mp.put(k, values[i]);
+                i++;
+            }
+            for (String k : mp.keySet()) {
                 switch (k) {
-                    case "id":
-                        sp.setId(Integer.parseInt(values[0]));
-                    case "name":
-                        sp.setName(values[1]);
-                    case "Coordinates.x":
-                        sp.setCoordinates(new Coordinates(Float.parseFloat(values[2]), Double.valueOf(values[3])));
-                    case "creationDate":
-                        System.out.println();
-                    case "health":
-                        sp.setHealth(Integer.parseInt(values[5]));
-                    case "hearCount":
-                        sp.setHeartCount(Integer.parseInt(values[6]));
-                    case "achievements":
-                        sp.setAchievements(values[7]);
-                    case "AstartesCategory":
-                        switch (values[8]) {
+                    case "ID":
+                        sp.setId(Integer.parseInt(mp.get("ID")));
+                    case "NAME":
+                        sp.setName(mp.get("NAME"));
+                    case "COORDINATES.X":
+                        System.out.println(mp.get("COORDINATES"));
+                    case "COORDINATES.Y":
+
+                    case "CREATIONDATE":
+
+                    case "HEALTH":
+                        sp.setHealth(Integer.parseInt(mp.get("HEALTH")));
+                    case "HEARTCOUNT":
+                        sp.setHeartCount(Integer.parseInt(mp.get("HEARTCOUNT")));
+                    case "ACHIEVEMENTS":
+                        sp.setAchievements(mp.get("ACHIEVEMENTS"));
+                    case "CATEGORY":
+                        switch (mp.get("CATEGORY")) {
                             case "SCOUT":
                                 sp.setCategory(AstartesCategory.SCOUT);
                             case "ASSAULT":
@@ -44,7 +53,7 @@ public class Parser extends AbstractParser {
                             case "APOTHECARY":
                                 sp.setCategory(AstartesCategory.APOTHECARY);
                         }
-                    case "Chapter.name":
+                    case "CHAPTER":
                         sp.setChapter(new Chapter(values[9], Long.parseLong(values[10])));
                 }
             }

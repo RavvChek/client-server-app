@@ -3,7 +3,9 @@ package ru.ravvcheck.itmo.springLabs.model;
 import java.util.Objects;
 
 public class Coordinates {
+
     private float x;
+
     private Double y; //Значение поля должно быть больше -903, Поле не может быть null
 
     public Coordinates(float x, Double y) {

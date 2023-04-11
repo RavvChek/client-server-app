@@ -10,8 +10,6 @@ public class InfoCommand extends AbstractCommand{
 
     @Override
     public void execute() {
-        System.out.println("Тип: " + this.supervisor.getDatabase().getType());
-        System.out.println("Дата инициализации: " + this.supervisor.getDatabase().getDate().toString());
-        System.out.println("Количество элементов: " + this.supervisor.getDatabase().getCount());
+        this.supervisor.getDatabase().infoData();
     }
 }

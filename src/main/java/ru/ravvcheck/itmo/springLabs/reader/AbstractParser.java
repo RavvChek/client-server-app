@@ -6,5 +6,5 @@ import java.util.List;
 import java.util.Scanner;
 
 public abstract class AbstractParser {
-    public abstract SpaceMarine reading(String line, Scanner scanner, List<String> keys);
+    public abstract SpaceMarine reading(String line, Scanner scanner, String[] keys);
 }

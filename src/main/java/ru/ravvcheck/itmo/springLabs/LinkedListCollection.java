@@ -51,5 +51,28 @@ public class LinkedListCollection {
             System.out.println(sp.toString());
         }
     }
+
+    public void infoData() {
+        System.out.println("Тип: " + this.getType());
+        System.out.println("Дата инициализации: " + this.getDate().toString());
+        System.out.println("Количество элементов: " + this.getCount());
+    }
+
+    public void remoteItem() {
+
+    }
+
+    public void addItem() {
+
+    }
+    public void updateItem(){
+
+    }
+    public void groupCountingByName(){
+
+    }
+    public void averageOfHealth(){
+
+    }
 }
-}
+
