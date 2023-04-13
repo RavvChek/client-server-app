@@ -63,34 +63,4 @@ public class Parser implements Parsing {
 
         return sp;
     }
-
-    /*@Override
-    public LinkedList<SpaceMarine> reading(String line) {
-
-        String[] objects = line.split("\n");
-        for(String str : objects){
-            SpaceMarine sm = new SpaceMarine();
-            String[] elements = str.split(",");
-            sm.setId(Integer.parseInt(elements[0]));
-            sm.setName(elements[1]);
-            sm.setCoordinates(new Coordinates(Float.parseFloat(elements[2]), Double.valueOf(elements[3])));
-            sm.;
-            sm;
-            sm;
-            sm;
-            sm;
-            sm;
-        }
-    }*/
-    /*@Override
-    public LinkedList<SpaceMarine> reading(String line) {
-        try (CSVReader reader = new CSVReader(new FileReader(line)) {
-            String[] nextLine;
-            while ((nextLine = reader.readNext()) != null) {
-                System.out.println(Arrays.toString(nextLine));
-            }
-        } catch (IOException | CsvValidationException e) {
-            e.printStackTrace();
-        }
-    }*/
 }

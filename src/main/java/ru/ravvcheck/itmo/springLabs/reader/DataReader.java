@@ -10,10 +10,7 @@ import java.util.Scanner;
 public abstract class DataReader {
     protected Parser parser;
     protected File file;
-    protected String returnString;
     protected Scanner scanner;
-    protected List<String> strings;
-    protected List<String> keys;
     protected String filePath;
 
     public abstract LinkedList<SpaceMarine> getData() throws Exception;

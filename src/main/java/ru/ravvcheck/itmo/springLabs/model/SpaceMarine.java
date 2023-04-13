@@ -35,7 +35,6 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
 
     }
 
-    ;
 
     public int getId() {
         return id;
@@ -166,17 +165,14 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         if (sp.getName().compareTo(this.getName()) == 0) {
             if (sp.getHealth().compareTo(this.getHealth()) == 0) {
                 return 0;
-            }
-            else if(sp.getHealth().compareTo(this.getHealth()) > 0){
+            } else if (sp.getHealth().compareTo(this.getHealth()) > 0) {
                 return 1;
-            }
-            else{
+            } else {
                 return -1;
             }
-        } else if(sp.getName().compareTo(this.getName()) > 0){
+        } else if (sp.getName().compareTo(this.getName()) > 0) {
             return 1;
-        }
-        else{
+        } else {
             return -1;
         }
 
