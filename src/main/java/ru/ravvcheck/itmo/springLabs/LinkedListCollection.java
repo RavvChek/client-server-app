@@ -5,13 +5,12 @@ import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
 import java.util.Date;
 import java.util.LinkedList;
-import java.util.List;
 
 public class LinkedListCollection {
     private final DataReader dataReader;
-    private final LinkedList<SpaceMarine> data;
     private final String type;
     private final Date date;
+    private LinkedList<SpaceMarine> data;
     private int count;
 
     public LinkedListCollection(DataReader dataReader) throws Exception {
@@ -24,6 +23,10 @@ public class LinkedListCollection {
 
     public LinkedList<SpaceMarine> getData() {
         return data;
+    }
+
+    public void setData(LinkedList<SpaceMarine> data) {
+        this.data = data;
     }
 
     public Date getDate() {
@@ -66,26 +69,31 @@ public class LinkedListCollection {
     public void addItem() {
 
     }
-    public void updateItem(){
+
+    public void updateItem() {
 
     }
-    public void groupCountingByName(){
+
+    public void groupCountingByName() {
+
 
     }
-    public void averageOfHealth(){
-        try{
+
+    public void averageOfHealth() {
+        try {
             int result = 0;
-            for(SpaceMarine sp : data){
+            for (SpaceMarine sp : data) {
                 result += sp.getHealth();
             }
             result /= data.size();
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-    public void minById(){
+
+    public void minById() {
         for (SpaceMarine sp : data) {
-            if (sp.compareToId(sp.))
+
         }
     }
 

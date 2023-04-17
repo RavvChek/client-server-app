@@ -14,7 +14,7 @@ public class SpaceMarineStringForm {
         result.add(getCoordinatesYStr(sp));
         result.add(getCreationDateStr(sp));
         result.add(getHealthStr(sp));
-        result.add(getHearCountStr(sp));
+        result.add(getHeartCountStr(sp));
         result.add(getAchievements(sp));
         result.add(getCategoryStr(sp));
         result.add(getChapterStrName(sp));
@@ -22,43 +22,47 @@ public class SpaceMarineStringForm {
         return result;
     }
 
-    private static String getIdStr(SpaceMarine sp) {
+    public static String getIdStr(SpaceMarine sp) {
         return String.valueOf(sp.getId());
     }
 
-    private static String getCoordinateXStr(SpaceMarine sp) {
+    public static String getName(SpaceMarine sp) {
+        return sp.getName();
+    }
+
+    public static String getCoordinateXStr(SpaceMarine sp) {
         return String.valueOf(sp.getCoordinates().getX());
     }
 
-    private static String getCoordinatesYStr(SpaceMarine sp) {
+    public static String getCoordinatesYStr(SpaceMarine sp) {
         return String.valueOf(sp.getCoordinates().getY());
     }
 
-    private static String getCreationDateStr(SpaceMarine sp) {
+    public static String getCreationDateStr(SpaceMarine sp) {
         return sp.getCreationDate().toString();
     }
 
-    private static String getHealthStr(SpaceMarine sp) {
+    public static String getHealthStr(SpaceMarine sp) {
         return String.valueOf(sp.getHealth());
     }
 
-    private static String getHearCountStr(SpaceMarine sp) {
+    public static String getHeartCountStr(SpaceMarine sp) {
         return String.valueOf(sp.getHeartCount());
     }
 
-    private static String getAchievements(SpaceMarine sp) {
+    public static String getAchievements(SpaceMarine sp) {
         return sp.getAchievements();
     }
 
-    private static String getCategoryStr(SpaceMarine sp) {
+    public static String getCategoryStr(SpaceMarine sp) {
         return sp.getCategory().toString();
     }
 
-    private static String getChapterStrName(SpaceMarine sp) {
+    public static String getChapterStrName(SpaceMarine sp) {
         return sp.getChapter().getName();
     }
 
-    private static String getChapterMarinesCountStr(SpaceMarine sp) {
+    public static String getChapterMarinesCountStr(SpaceMarine sp) {
         return String.valueOf(sp.getChapter().getMarinesCount());
     }
 }

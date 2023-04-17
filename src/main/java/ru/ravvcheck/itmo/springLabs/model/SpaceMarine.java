@@ -197,6 +197,13 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
             validateCoordinates(sp.getCoordinates());
         }
 
+        public static void validateUniqueId(LinkedList<SpaceMarine> list,  int id) throws Exception{
+            for(SpaceMarine sp : list){
+                if(sp.getId() == id){
+                    throw new Exception();
+                }
+            }
+        }
         public static void validateName(String name) throws Exception {
             if (name.equals("") || name == null) {
                 throw new Exception();

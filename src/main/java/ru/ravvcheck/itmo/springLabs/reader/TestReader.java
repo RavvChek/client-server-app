@@ -1,11 +1,13 @@
-package com.ifmo.collection;
+package ru.ravvcheck.itmo.springLabs.reader;
 
-import com.ifmo.exceptions.WrongInputException;
-import com.ifmo.io.ErrorHandler;
-import com.ifmo.model.*;
+
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
+import ru.ravvcheck.itmo.springLabs.forms.SpaceMarineStringForm;
+import ru.ravvcheck.itmo.springLabs.model.AstartesCategory;
+import ru.ravvcheck.itmo.springLabs.model.Chapter;
+import ru.ravvcheck.itmo.springLabs.model.Coordinates;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
@@ -13,38 +15,36 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 public class TestReader extends DataReader {
-    private PriorityQueue<SpaceMarine> collection;
 
-    TestReader(String filePath) {
+    public TestReader(String filePath) {
         this.filePath = filePath;
         file = new File(filePath);
-    }
-
-    private boolean groupExists(Long id) {
-        for (SpaceMarine spaceMarine : collection) {
-            if (spaceMarine.getId().equals(id)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     @Override
     public void saveData(LinkedList<SpaceMarine> values) throws Exception {
         CSVWriter writer = new CSVWriter(new FileWriter(filePath), ',', CSVWriter.DEFAULT_QUOTE_CHARACTER,
                 CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
-        String[] header = {"id", "name", "coordinates_x", "coordinates_y", "creation_date", "students_count", "should_be_expelled", "average_mark", "form_of_education", "group_admin_name", "group_admin_height", "group_admin_eye_color", "group_admin_nationality"};
+        String[] header = {"id", "name", "coordinates_x", "coordinates_y", "creation_date", "health", "heart_count", "achievements", "category", "chapter_name", "chapter_marines_count"};
         writer.writeNext(header);
-
         List<String[]> data = new ArrayList<>();
-        for (SpaceMarine spaceMarine : collection) {
+        for (SpaceMarine spaceMarine : values) {
             String[] line = {
-                    String.
-
+                    SpaceMarineStringForm.getIdStr(spaceMarine),
+                    SpaceMarineStringForm.getName(spaceMarine),
+                    SpaceMarineStringForm.getCoordinateXStr(spaceMarine),
+                    SpaceMarineStringForm.getCoordinatesYStr(spaceMarine),
+                    SpaceMarineStringForm.getCreationDateStr(spaceMarine),
+                    SpaceMarineStringForm.getHealthStr(spaceMarine),
+                    SpaceMarineStringForm.getHeartCountStr(spaceMarine),
+                    SpaceMarineStringForm.getAchievements(spaceMarine),
+                    SpaceMarineStringForm.getCategoryStr(spaceMarine),
+                    SpaceMarineStringForm.getChapterStrName(spaceMarine),
+                    SpaceMarineStringForm.getChapterMarinesCountStr(spaceMarine)
             };
             data.add(line);
         }
@@ -52,52 +52,40 @@ public class TestReader extends DataReader {
         writer.close();
     }
 
-
     public LinkedList<SpaceMarine> getData() {
 
         try {
-            collection.clear();
+            LinkedList<SpaceMarine> list = new LinkedList<>();
             CSVReader reader = new CSVReader(new FileReader(file));
-
-// Считываем первую строку (заголовки столбцов)
             String[] header = reader.readNext();
             Map<String, Integer> headerMap = new HashMap<>();
             for (int i = 0; i < header.length; i++) {
                 headerMap.put(header[i], i);
             }
-
-// Считываем остальные строки
             String[] nextLine;
             while ((nextLine = reader.readNext()) != null) {
-                // Создаем объект StudyGroup
-                if (groupExists(Long.parseLong(nextLine[headerMap.get("id")]))) {
-                    ErrorHandler.logError("Данные в файле неверны, существуют две группы с одинаковыми id!");
-                    return;
-                }
-
-                // Добавляем объект в коллекцию
-                StudyGroup studyGroup = new StudyGroup(Long.parseLong(nextLine[headerMap.get("id")]));
-                studyGroup.setName(nextLine[headerMap.get("name")]);
-                studyGroup.setCoordinates(new Coordinates(Double.parseDouble(nextLine[headerMap.get("coordinates_x")]), Double.parseDouble(nextLine[headerMap.get("coordinates_y")])));
-                studyGroup.setCreationDate(LocalDate.parse(nextLine[headerMap.get("creation_date")]));
-                studyGroup.setStudentsCount(Integer.parseInt(nextLine[headerMap.get("students_count")]));
-                studyGroup.setShouldBeExpelled(Integer.parseInt(nextLine[headerMap.get("should_be_expelled")]));
-                studyGroup.setAverageMark(Long.parseLong(nextLine[headerMap.get("average_mark")]));
-                studyGroup.setFormOfEducation(FormOfEducation.valueOf(nextLine[headerMap.get("form_of_education")]));
-                studyGroup.setGroupAdmin(new Person(nextLine[headerMap.get("group_admin_name")], Double.parseDouble(nextLine[headerMap.get("group_admin_height")]),
-                        Color.valueOf(nextLine[headerMap.get("group_admin_eye_color")]), Country.valueOf(nextLine[headerMap.get("group_admin_nationality")])));
-                collection.add(studyGroup);
+                SpaceMarine.SpaceMarineValidation.validateUniqueId(list, Integer.parseInt(nextLine[headerMap.get("id")]));
+                SpaceMarine spaceMarine = new SpaceMarine();
+                spaceMarine.setId(Integer.parseInt(nextLine[headerMap.get("id")]));
+                spaceMarine.setName(nextLine[headerMap.get("name")]);
+                spaceMarine.setCoordinates(new Coordinates(Float.parseFloat(nextLine[headerMap.get("coordinates_x")]), Double.parseDouble(nextLine[headerMap.get("coordinates_y")])));
+                //spaceMarine.setCreationDate(ZonedDateTime.parse(nextLine[headerMap.get("creation_date")]));
+                spaceMarine.setHealth(Integer.parseInt(nextLine[headerMap.get("health")]));
+                spaceMarine.setHeartCount(Integer.parseInt(nextLine[headerMap.get("heart_count")]));
+                spaceMarine.setAchievements(nextLine[headerMap.get("achievements")]);
+                spaceMarine.setCategory(AstartesCategory.valueOf(nextLine[headerMap.get("category")]));
+                spaceMarine.setChapter(new Chapter(nextLine[headerMap.get("chapter_name")], Long.parseLong(nextLine[headerMap.get("chapter_marines_count")])));
+                list.add(spaceMarine);
             }
-
             reader.close();
-
+            return list;
         } catch (CsvValidationException | IOException e) {
-            ErrorHandler.logError("Ошибка чтения файла!" + e.getMessage());
-        } catch (NumberFormatException | WrongInputException e) {
-            ErrorHandler.logError("Данные в файле неверны!\n" + e.getMessage());
+            System.out.println(("Ошибка чтения файла!" + e.getMessage()));
+        } catch (NumberFormatException e) {
+            System.out.println(("Данные в файле неверны!\n"));
         } catch (Exception e) {
-            ErrorHandler.logError("Данные в файле неверны!\n" + e.getMessage());
+            System.out.println(("Данные в файле неверны!\n" + e.getMessage()));
         }
-        return;
+        return null;
     }
 }

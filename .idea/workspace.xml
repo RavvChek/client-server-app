@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="go go go">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/TestReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fffff.csv" beforeDir="false" afterPath="$PROJECT_DIR$/fffff.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineStringForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineStringForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/SpaceMarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/SpaceMarine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/DataReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/TestReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/TestReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +73,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;RavvChek&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;author&quot;: &quot;RavvChek&quot;
   }
 }</component>
   <component name="GithubDefaultAccount">
@@ -208,7 +217,8 @@
       <workItem from="1681211188358" duration="8976000" />
       <workItem from="1681221517228" duration="21532000" />
       <workItem from="1681312171996" duration="2511000" />
-      <workItem from="1681363959892" duration="933000" />
+      <workItem from="1681363959892" duration="7315000" />
+      <workItem from="1681732684733" duration="7767000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1679155532116</created>
@@ -266,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681248478477</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="go go go">
+      <created>1681365002915</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681365002915</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +298,17 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
@@ -311,5 +339,25 @@
     <MESSAGE value="start" />
     <MESSAGE value="go go go" />
     <option name="LAST_COMMIT_MESSAGE" value="go go go" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/TestReader.java</url>
+          <line>54</line>
+          <properties class="ru.ravvcheck.itmo.springLabs.reader.TestReader" method="getData">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
