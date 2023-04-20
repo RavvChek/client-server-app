@@ -9,7 +9,8 @@ public class UpdateCommand extends AbstractCommand{
     }
 
     @Override
-    public void execute(String args) {
-
+    public void execute(String args) throws Exception {
+        int id = Integer.parseInt(args);
+        supervisor.getDatabase().updateItem(id);
     }
 }

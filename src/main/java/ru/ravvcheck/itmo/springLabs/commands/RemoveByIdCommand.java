@@ -10,6 +10,7 @@ public class RemoveByIdCommand extends AbstractCommand{
 
     @Override
     public void execute(String args) {
-
+        int id = Integer.parseInt(args);
+        supervisor.getDatabase().removeByIdItem(id);
     }
 }

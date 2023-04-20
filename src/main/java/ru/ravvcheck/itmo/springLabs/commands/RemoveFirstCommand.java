@@ -10,6 +10,6 @@ public class RemoveFirstCommand extends AbstractCommand{
 
     @Override
     public void execute(String args) {
-
+        supervisor.getDatabase().removeFirstItem();
     }
 }

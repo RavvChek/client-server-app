@@ -10,6 +10,6 @@ public class AverageOfHealthCommand extends AbstractCommand {
 
     @Override
     public void execute(String args) {
-
+        this.supervisor.getDatabase().averageOfHealth();
     }
 }

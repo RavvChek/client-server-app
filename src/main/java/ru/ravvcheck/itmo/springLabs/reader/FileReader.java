@@ -35,7 +35,7 @@ public class FileReader extends DataReader {
                     SpaceMarineStringForm.getName(spaceMarine),
                     SpaceMarineStringForm.getCoordinateXStr(spaceMarine),
                     SpaceMarineStringForm.getCoordinatesYStr(spaceMarine),
-                    SpaceMarineStringForm.getCreationDateStr(spaceMarine),
+                    //SpaceMarineStringForm.getCreationDateStr(spaceMarine),
                     SpaceMarineStringForm.getHealthStr(spaceMarine),
                     SpaceMarineStringForm.getHeartCountStr(spaceMarine),
                     SpaceMarineStringForm.getAchievements(spaceMarine),

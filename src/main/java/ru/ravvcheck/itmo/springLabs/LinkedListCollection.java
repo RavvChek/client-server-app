@@ -1,10 +1,11 @@
 package ru.ravvcheck.itmo.springLabs;
 
+import ru.ravvcheck.itmo.springLabs.forms.SpaceMarineBuild;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
-import java.util.Date;
-import java.util.LinkedList;
+import java.time.ZonedDateTime;
+import java.util.*;
 
 public class LinkedListCollection {
     private final DataReader dataReader;
@@ -62,21 +63,61 @@ public class LinkedListCollection {
         System.out.println("Количество элементов: " + this.getCount());
     }
 
-    public void remoteItem() {
-
+    public void removeFirstItem() {
+        data.removeFirst();
     }
 
-    public void addItem() {
-
+    public void removeByIdItem(int id) {
+        for (SpaceMarine sp : data) {
+            if (sp.getId() == id) {
+                data.remove(sp);
+            }
+        }
     }
 
-    public void updateItem() {
+    public void addItem() throws Exception {
+        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
+        data.add(spaceMarineBuild.build());
+    }
 
+    public void updateItem(int id) throws Exception {
+        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
+        for (SpaceMarine sp : data) {
+            if (sp.getId() == id) {
+                SpaceMarine newSp = spaceMarineBuild.build();
+                sp.setId(newSp.getId());
+                sp.setName(newSp.getName());
+                sp.setCoordinatesX(newSp.getCoordinates().getX());
+                sp.setCoordinatesY(newSp.getCoordinates().getY());
+                sp.setCreationDate(ZonedDateTime.now());
+                sp.setHealth(newSp.getHealth());
+                sp.setHeartCount(newSp.getHeartCount());
+                sp.setAchievements(newSp.getAchievements());
+                sp.setCategory(sp.getCategory());
+                sp.setChapterName(sp.getChapter().getName());
+                sp.setChapterMarinesCount(newSp.getChapter().getMarinesCount());
+            }
+        }
     }
 
     public void groupCountingByName() {
-
-
+        HashSet<String> setName = new HashSet<>();
+        for (SpaceMarine sp : data) {
+            setName.add(sp.getName());
+        }
+        HashMap<String, List> hashMap = new HashMap<>();
+        for (String name : setName) {
+            List<SpaceMarine> list = new ArrayList<>();
+            for (SpaceMarine sp : data) {
+                if (sp.getName().equals(name)) {
+                    list.add(sp);
+                }
+            }
+            hashMap.put(name, list);
+        }
+        for (String name : setName) {
+            System.out.println(name + " " + hashMap.get(name).size());
+        }
     }
 
     public void averageOfHealth() {
@@ -86,16 +127,24 @@ public class LinkedListCollection {
                 result += sp.getHealth();
             }
             result /= data.size();
+            System.out.println("Среднее значение:" + result);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
     public void minById() {
+        int minId = 100000;
         for (SpaceMarine sp : data) {
-
+            if (sp.getId() < minId) {
+                minId = sp.getId();
+            }
+        }
+        for (SpaceMarine sp : data) {
+            if (sp.getId() == minId) {
+                System.out.println(sp.toString());
+            }
         }
     }
-
 }
 

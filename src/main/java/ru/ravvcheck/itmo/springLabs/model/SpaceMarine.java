@@ -232,7 +232,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
 
         public static void validateHeartCount(int heartCount) throws Exception {
             if (heartCount > 3 || heartCount < 0) {
-                throw new Exception();
+                throw new Exception("RNVJVJKNREJKVNKRENV");
             }
         }
 

@@ -1,6 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
+import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
 
 public class GroupCountingByNameCommand extends AbstractCommand{
@@ -10,6 +11,6 @@ public class GroupCountingByNameCommand extends AbstractCommand{
 
     @Override
     public void execute(String args) {
-
+        supervisor.getDatabase().groupCountingByName();
     }
 }

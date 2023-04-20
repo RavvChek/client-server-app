@@ -53,7 +53,7 @@ public class Supervisor implements Supervising {
 
 
     @Override
-    public void run() {
+    public void run() throws Exception {
         this.active = true;
         while (active) {
             waitCommand();
@@ -66,13 +66,13 @@ public class Supervisor implements Supervising {
     }
 
     @Override
-    public void waitCommand() {
+    public void waitCommand() throws Exception {
         System.out.print(">>> ");
-        try {
-            if (!scanner.hasNext()) throw new MustExit();
+        //try {
+            //if (!scanner.hasNext()) throw new MustExit();
             String userCommand = scanner.nextLine().trim();
             this.start(userCommand.split(" ", 2));
-        } catch (NoSuchElementException e) {
+        /*} catch (NoSuchElementException e) {
             console.printError("Пользовательский ввод не обнаружен.");
         } catch (IllegalArgument e) {
             console.printError("Введены неправильные аргументы команды.");
@@ -82,11 +82,11 @@ public class Supervisor implements Supervising {
             console.printError("Ошибка при исполнении команды.");
         } catch (MustExit e) {
             console.printError("Выход из программы. Bye!");
-            return;
-        }
+            return;*/
+        //}
     }
 
-    public void start(String[] userCommand) throws IllegalArgument, NoCommand, CommandRuntime, MustExit {
+    public void start(String[] userCommand) throws Exception /*throws IllegalArgument, NoCommand, CommandRuntime, MustExit*/{
         if (userCommand[0].equals("")) return;
         Command command = commandMap.get(userCommand[0]);
         if (userCommand.length < 2)
