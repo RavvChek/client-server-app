@@ -17,6 +17,7 @@ public class LinkedListCollection {
     public LinkedListCollection(DataReader dataReader) throws Exception {
         this.dataReader = dataReader;
         data = dataReader.getData();
+        sortData();
         type = SpaceMarine.class.getName();
         date = new Date();
     }
@@ -75,9 +76,11 @@ public class LinkedListCollection {
         }
     }
 
-    public void addItem() throws Exception {
-        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
-        data.add(spaceMarineBuild.build());
+    public void addItem(SpaceMarine sp) throws Exception {
+        data.add(sp);
+    }
+    public void addFirstItem(SpaceMarine sp){
+        data.addFirst(sp);
     }
 
     public void updateItem(int id) throws Exception {
@@ -143,6 +146,19 @@ public class LinkedListCollection {
         for (SpaceMarine sp : data) {
             if (sp.getId() == minId) {
                 System.out.println(sp.toString());
+            }
+        }
+    }
+
+    public void sortData() {
+        for (ListIterator<SpaceMarine> it = data.listIterator(); it.hasNext(); ) {
+            SpaceMarine sp1 = it.next();
+            int index = data.indexOf(sp1);
+            for (ListIterator<SpaceMarine> iter = data.listIterator(index); iter.hasNext(); ) {
+                SpaceMarine sp2 = iter.next();
+                if (sp1.compareTo(sp2) > 0) {
+                    Collections.swap(data, data.indexOf(sp1), data.indexOf(sp2));
+                }
             }
         }
     }

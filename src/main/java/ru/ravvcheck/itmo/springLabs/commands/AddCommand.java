@@ -10,6 +10,8 @@ public class AddCommand extends AbstractCommand {
 
     @Override
     public void execute(String args) throws Exception {
-        this.supervisor.getDatabase().addItem();
+        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
+        this.supervisor.getDatabase().addItem(spaceMarineBuild.build());
+        supervisor.getDatabase().sortData();
     }
 }

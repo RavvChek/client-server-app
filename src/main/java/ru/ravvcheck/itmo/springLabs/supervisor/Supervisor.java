@@ -7,7 +7,6 @@ import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Supervisor implements Supervising {
@@ -28,7 +27,7 @@ public class Supervisor implements Supervising {
         commandMap.put("clear", new ClearCommand(this));
         commandMap.put("execute_script", new ExecuteScriptCommand(this));
         commandMap.put("exit", new ExitCommand(this));
-        commandMap.put("group_count_by_name", new GroupCountingByNameCommand(this));
+        commandMap.put("group_counting_by_name", new GroupCountingByNameCommand(this));
         commandMap.put("help", new HelpCommand(this));
         commandMap.put("info", new InfoCommand(this));
         commandMap.put("min_by_id", new MinByIdCommand(this));
@@ -55,9 +54,18 @@ public class Supervisor implements Supervising {
     @Override
     public void run() throws Exception {
         this.active = true;
+        System.out.println("Добро пожаловать Ярослав Кулинич!");
         while (active) {
             waitCommand();
         }
+    }
+
+    public HashMap<String, Command> getHashMapCommands() {
+        return commandMap;
+    }
+
+    public Command getCommandByName(String name) {
+        return commandMap.get(name);
     }
 
     @Override
@@ -69,9 +77,9 @@ public class Supervisor implements Supervising {
     public void waitCommand() throws Exception {
         System.out.print(">>> ");
         //try {
-            //if (!scanner.hasNext()) throw new MustExit();
-            String userCommand = scanner.nextLine().trim();
-            this.start(userCommand.split(" ", 2));
+        //if (!scanner.hasNext()) throw new MustExit();
+        String userCommand = scanner.nextLine().trim();
+        this.start(userCommand.split(" ", 2));
         /*} catch (NoSuchElementException e) {
             console.printError("Пользовательский ввод не обнаружен.");
         } catch (IllegalArgument e) {
@@ -86,12 +94,12 @@ public class Supervisor implements Supervising {
         //}
     }
 
-    public void start(String[] userCommand) throws Exception /*throws IllegalArgument, NoCommand, CommandRuntime, MustExit*/{
-        if (userCommand[0].equals("")) return;
-        Command command = commandMap.get(userCommand[0]);
-        if (userCommand.length < 2)
+    public void start(String[] argsCommand) throws Exception /*throws IllegalArgument, NoCommand, CommandRuntime, MustExit*/ {
+        if (argsCommand[0].equals("")) return;
+        Command command = commandMap.get(argsCommand[0]);
+        if (argsCommand.length < 2)
             command.execute("");
         else
-            command.execute(userCommand[1]);
+            command.execute(argsCommand[1]);
     }
 }

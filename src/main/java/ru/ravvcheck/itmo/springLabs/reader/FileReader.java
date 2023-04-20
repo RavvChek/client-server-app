@@ -10,9 +10,7 @@ import ru.ravvcheck.itmo.springLabs.model.Chapter;
 import ru.ravvcheck.itmo.springLabs.model.Coordinates;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class FileReader extends DataReader {
@@ -24,7 +22,7 @@ public class FileReader extends DataReader {
 
     @Override
     public void saveData(LinkedList<SpaceMarine> values) throws Exception {
-        CSVWriter writer = new CSVWriter(new FileWriter(filePath), ',', CSVWriter.DEFAULT_QUOTE_CHARACTER,
+        CSVWriter writer = new CSVWriter(new OutputStreamWriter(new FileOutputStream(filePath)), ',', CSVWriter.DEFAULT_QUOTE_CHARACTER,
                 CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
         String[] header = {"id", "name", "coordinates_x", "coordinates_y", "creation_date", "health", "heart_count", "achievements", "category", "chapter_name", "chapter_marines_count"};
         writer.writeNext(header);

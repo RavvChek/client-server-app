@@ -175,7 +175,6 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         } else {
             return -1;
         }
-
     }
 
 
