@@ -18,6 +18,4 @@ public abstract class AbstractCommand implements Command {
     public String toString() {
         return name + ": " + description;
     }
-
-    public abstract void execute();
 }

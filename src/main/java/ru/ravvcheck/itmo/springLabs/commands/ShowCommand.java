@@ -8,7 +8,7 @@ public class ShowCommand extends AbstractCommand {
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
         this.supervisor.getDatabase().show();
     }
 }

@@ -8,7 +8,7 @@ public class ExitCommand extends AbstractCommand {
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
         this.supervisor.stop();
     }
 }

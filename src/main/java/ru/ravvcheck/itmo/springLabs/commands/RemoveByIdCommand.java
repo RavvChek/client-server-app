@@ -9,7 +9,7 @@ public class RemoveByIdCommand extends AbstractCommand{
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
 
     }
 }

@@ -9,7 +9,7 @@ public class SaveCommand extends AbstractCommand{
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
         try{
             this.supervisor.getDatabase().saveData();
         } catch (Exception e){

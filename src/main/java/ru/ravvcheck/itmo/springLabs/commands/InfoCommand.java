@@ -9,7 +9,7 @@ public class InfoCommand extends AbstractCommand{
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
         this.supervisor.getDatabase().infoData();
     }
 }

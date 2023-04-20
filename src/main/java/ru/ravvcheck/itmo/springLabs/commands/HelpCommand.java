@@ -9,7 +9,7 @@ public class HelpCommand extends AbstractCommand{
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
 
     }
 }

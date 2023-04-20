@@ -13,7 +13,7 @@ public class AddIfMaxCommand extends AbstractCommand {
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
         LinkedList<SpaceMarine> list = supervisor.getCollection();
     }
 }

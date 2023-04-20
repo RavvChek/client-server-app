@@ -1,21 +1,21 @@
 package ru.ravvcheck.itmo.springLabs.reader;
 
-import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
+
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+import com.opencsv.exceptions.CsvValidationException;
 import ru.ravvcheck.itmo.springLabs.forms.SpaceMarineStringForm;
+import ru.ravvcheck.itmo.springLabs.model.AstartesCategory;
+import ru.ravvcheck.itmo.springLabs.model.Chapter;
+import ru.ravvcheck.itmo.springLabs.model.Coordinates;
+import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.nio.file.Files;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class FileReader extends DataReader {
-    private String[] keys;
-    {
-        this.parser = new Parser();
-    }
 
     public FileReader(String filePath) {
         this.filePath = filePath;
@@ -23,38 +23,66 @@ public class FileReader extends DataReader {
     }
 
     @Override
-    public LinkedList<SpaceMarine> getData() throws Exception {
-        LinkedList<SpaceMarine> list = new LinkedList<>();
-        if (!Files.isReadable(file.toPath())) {
-            throw new Exception("");
+    public void saveData(LinkedList<SpaceMarine> values) throws Exception {
+        CSVWriter writer = new CSVWriter(new FileWriter(filePath), ',', CSVWriter.DEFAULT_QUOTE_CHARACTER,
+                CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
+        String[] header = {"id", "name", "coordinates_x", "coordinates_y", "creation_date", "health", "heart_count", "achievements", "category", "chapter_name", "chapter_marines_count"};
+        writer.writeNext(header);
+        List<String[]> data = new ArrayList<>();
+        for (SpaceMarine spaceMarine : values) {
+            String[] line = {
+                    SpaceMarineStringForm.getIdStr(spaceMarine),
+                    SpaceMarineStringForm.getName(spaceMarine),
+                    SpaceMarineStringForm.getCoordinateXStr(spaceMarine),
+                    SpaceMarineStringForm.getCoordinatesYStr(spaceMarine),
+                    SpaceMarineStringForm.getCreationDateStr(spaceMarine),
+                    SpaceMarineStringForm.getHealthStr(spaceMarine),
+                    SpaceMarineStringForm.getHeartCountStr(spaceMarine),
+                    SpaceMarineStringForm.getAchievements(spaceMarine),
+                    SpaceMarineStringForm.getCategoryStr(spaceMarine),
+                    SpaceMarineStringForm.getChapterStrName(spaceMarine),
+                    SpaceMarineStringForm.getChapterMarinesCountStr(spaceMarine)
+            };
+            data.add(line);
         }
-        scanner = new Scanner(file);
-        keys = scanner.nextLine().split(",");
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            list.add(parser.reading(line, scanner, keys));
-        }
-        scanner.close();
-        return list;
+        writer.writeAll(data);
+        writer.close();
     }
 
-    @Override
-    public void saveData(LinkedList<SpaceMarine> value) throws Exception {
-        if (!Files.isWritable(file.toPath())) {
-            throw new Exception();
-        }
-        try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file))) {
-            for(String key : keys){
-                writer.write(key + ",");
+    public LinkedList<SpaceMarine> getData() {
+
+        try {
+            LinkedList<SpaceMarine> list = new LinkedList<>();
+            CSVReader reader = new CSVReader(new java.io.FileReader(file));
+            String[] header = reader.readNext();
+            Map<String, Integer> headerMap = new HashMap<>();
+            for (int i = 0; i < header.length; i++) {
+                headerMap.put(header[i], i);
             }
-            for(SpaceMarine sp : value){
-                for(String attr : SpaceMarineStringForm.getListAllAttr(sp)){
-                    writer.write(attr + ",");
-                }
+            String[] nextLine;
+            while ((nextLine = reader.readNext()) != null) {
+                SpaceMarine.SpaceMarineValidation.validateUniqueId(list, Integer.parseInt(nextLine[headerMap.get("id")]));
+                SpaceMarine spaceMarine = new SpaceMarine();
+                spaceMarine.setId(Integer.parseInt(nextLine[headerMap.get("id")]));
+                spaceMarine.setName(nextLine[headerMap.get("name")]);
+                spaceMarine.setCoordinates(new Coordinates(Float.parseFloat(nextLine[headerMap.get("coordinates_x")]), Double.parseDouble(nextLine[headerMap.get("coordinates_y")])));
+                //spaceMarine.setCreationDate(ZonedDateTime.parse(nextLine[headerMap.get("creation_date")]));
+                spaceMarine.setHealth(Integer.parseInt(nextLine[headerMap.get("health")]));
+                spaceMarine.setHeartCount(Integer.parseInt(nextLine[headerMap.get("heart_count")]));
+                spaceMarine.setAchievements(nextLine[headerMap.get("achievements")]);
+                spaceMarine.setCategory(AstartesCategory.valueOf(nextLine[headerMap.get("category")]));
+                spaceMarine.setChapter(new Chapter(nextLine[headerMap.get("chapter_name")], Long.parseLong(nextLine[headerMap.get("chapter_marines_count")])));
+                list.add(spaceMarine);
             }
-        } catch (IOException e) {
-            System.out.println();
+            reader.close();
+            return list;
+        } catch (CsvValidationException | IOException e) {
+            System.out.println(("Ошибка чтения файла!" + e.getMessage()));
+        } catch (NumberFormatException e) {
+            System.out.println(("Данные в файле неверны!\n"));
+        } catch (Exception e) {
+            System.out.println(("Данные в файле неверны!\n" + e.getMessage()));
         }
+        return null;
     }
 }
-

@@ -8,7 +8,7 @@ public class AddCommand extends AbstractCommand {
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
         System.out.println("");
     }
 }
