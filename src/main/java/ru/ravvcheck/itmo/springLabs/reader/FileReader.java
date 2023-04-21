@@ -64,7 +64,7 @@ public class FileReader extends DataReader {
                 spaceMarine.setId(Integer.parseInt(nextLine[headerMap.get("id")]));
                 spaceMarine.setName(nextLine[headerMap.get("name")]);
                 spaceMarine.setCoordinates(new Coordinates(Float.parseFloat(nextLine[headerMap.get("coordinates_x")]), Double.parseDouble(nextLine[headerMap.get("coordinates_y")])));
-                //spaceMarine.setCreationDate(ZonedDateTime.parse(nextLine[headerMap.get("creation_date")]));
+                spaceMarine.setCreationDate(ZonedDateTime.parse(nextLine[headerMap.get("creation_date")]));
                 spaceMarine.setHealth(Integer.parseInt(nextLine[headerMap.get("health")]));
                 spaceMarine.setHeartCount(Integer.parseInt(nextLine[headerMap.get("heart_count")]));
                 spaceMarine.setAchievements(nextLine[headerMap.get("achievements")]);

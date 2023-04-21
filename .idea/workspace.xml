@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="all commands ready">
-      <change afterPath="$PROJECT_DIR$/script" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/ExitException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/RecursionScriptException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongArgumentException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongCommandException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongValuesException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fffff.csv" beforeDir="false" afterPath="$PROJECT_DIR$/fffff.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/data/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineStringForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineStringForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/supervisor/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/supervisor/Supervisor.java" afterDir="false" />
     </list>
@@ -220,7 +220,8 @@
       <workItem from="1681363959892" duration="7315000" />
       <workItem from="1681732684733" duration="10188000" />
       <workItem from="1681995979385" duration="21944000" />
-      <workItem from="1682074881032" duration="11440000" />
+      <workItem from="1682074881032" duration="11720000" />
+      <workItem from="1682102227827" duration="2059000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1679155532116</created>
@@ -313,7 +314,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682021367177</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="all commands ready">
+      <created>1682101620222</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1682101620222</updated>
+    </task>
+    <task id="LOCAL-00015" summary="all commands ready">
+      <created>1682101730599</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682101730599</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,16 +388,5 @@
     <MESSAGE value="first test run supervisor" />
     <MESSAGE value="all commands ready" />
     <option name="LAST_COMMIT_MESSAGE" value="all commands ready" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
