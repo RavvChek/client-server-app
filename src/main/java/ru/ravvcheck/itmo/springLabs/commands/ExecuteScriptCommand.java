@@ -10,6 +10,6 @@ public class ExecuteScriptCommand extends AbstractCommand{
 
     @Override
     public void execute(String args) {
-
+        supervisor.executeScript(args);
     }
 }

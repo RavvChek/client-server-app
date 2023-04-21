@@ -5,8 +5,11 @@ import ru.ravvcheck.itmo.springLabs.commands.*;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Supervisor implements Supervising {
@@ -101,5 +104,40 @@ public class Supervisor implements Supervising {
             command.execute("");
         else
             command.execute(argsCommand[1]);
+    }
+
+    public void executeScript(String fileName) {
+        try (Scanner scrScanner = new Scanner(new File(fileName))) {
+            if (!scrScanner.hasNext()) throw new NoSuchElementException();
+            do {
+                String userCmd = scrScanner.nextLine().trim() + " ";
+                while (scrScanner.hasNextLine() && userCmd.split(" ", 2)[0].isEmpty()) {
+                    userCmd = scrScanner.nextLine().trim() + " ";
+                }
+                if (userCmd.split(" ", 2)[0].equals("execute_script")) {
+                    if (userCmd.split(" ", 2)[1].equals("execute_script")) {
+                        System.out.println("");
+                    }
+                }
+                start(userCmd.split(" ", 2));
+            } while (scrScanner.hasNextLine());
+        } catch (FileNotFoundException e) {
+            System.out.println();
+        } catch (NoSuchElementException e) {
+            System.out.println();
+        /*} catch (IllegalArgument exception) {
+            console.printError("Аргументы команд введены неверно.");
+        } catch (NoCommand exception) {
+            console.printError("Такой команды не существует.");
+        } catch (RecursionScript exception) {
+            console.printError("Скрипт не может вызваться рекурсивно.");
+        } catch (CommandRuntime exception) {
+            console.printError("Ошибка при исполнении.");
+        } catch (MustExit exception) {
+            console.printError("Выход из программы. Bye!");
+        }*/
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

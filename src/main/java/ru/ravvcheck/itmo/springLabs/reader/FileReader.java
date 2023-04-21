@@ -11,6 +11,7 @@ import ru.ravvcheck.itmo.springLabs.model.Coordinates;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
 import java.io.*;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 public class FileReader extends DataReader {
@@ -33,7 +34,7 @@ public class FileReader extends DataReader {
                     SpaceMarineStringForm.getName(spaceMarine),
                     SpaceMarineStringForm.getCoordinateXStr(spaceMarine),
                     SpaceMarineStringForm.getCoordinatesYStr(spaceMarine),
-                    //SpaceMarineStringForm.getCreationDateStr(spaceMarine),
+                    SpaceMarineStringForm.getCreationDateStr(spaceMarine),
                     SpaceMarineStringForm.getHealthStr(spaceMarine),
                     SpaceMarineStringForm.getHeartCountStr(spaceMarine),
                     SpaceMarineStringForm.getAchievements(spaceMarine),
@@ -48,7 +49,6 @@ public class FileReader extends DataReader {
     }
 
     public LinkedList<SpaceMarine> getData() {
-
         try {
             LinkedList<SpaceMarine> list = new LinkedList<>();
             CSVReader reader = new CSVReader(new java.io.FileReader(file));
