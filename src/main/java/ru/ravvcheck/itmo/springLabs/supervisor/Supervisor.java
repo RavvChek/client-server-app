@@ -60,7 +60,7 @@ public class Supervisor implements Supervising {
         System.out.println("Добро пожаловать Ярослав Кулинич!");
         while (active) {
             waitCommand();
-        }
+        }.
     }
 
     public HashMap<String, Command> getHashMapCommands() {
