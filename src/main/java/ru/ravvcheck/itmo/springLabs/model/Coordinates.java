@@ -1,5 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.model;
 
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
+
 import java.util.Objects;
 
 public class Coordinates {
@@ -50,12 +52,12 @@ public class Coordinates {
                 '}';
     }
     public static class CoordinatesValidation {
-        public static void validate(Coordinates coordinates) throws Exception {
+        public static void validate(Coordinates coordinates) throws WrongValuesException {
             validateY(coordinates.getY());
         }
-        public static void validateY(Double y) throws Exception {
+        public static void validateY(Double y) throws WrongValuesException {
             if (y < -903 || y == null){
-                throw new Exception();
+                throw new WrongValuesException("Поле coordinates_y не может быть меньше -903 или быть null");
             }
         }
     }

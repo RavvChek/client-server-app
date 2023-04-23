@@ -2,7 +2,6 @@ package ru.ravvcheck.itmo.springLabs.forms;
 
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +40,7 @@ public class SpaceMarineStringForm {
     }
 
     public static String getCreationDateStr(SpaceMarine sp) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm:ss");
-        String formattedString = sp.getCreationDate().format(formatter);
-        return formattedString;
+        return sp.getCreationDate().format(DateTimeFormatter.ISO_DATE_TIME);
     }
 
     public static String getHealthStr(SpaceMarine sp) {

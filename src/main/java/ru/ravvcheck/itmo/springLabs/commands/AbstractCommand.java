@@ -1,5 +1,6 @@
 package ru.ravvcheck.itmo.springLabs.commands;
 
+import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
 
 public abstract class AbstractCommand implements Command {
@@ -17,5 +18,14 @@ public abstract class AbstractCommand implements Command {
     @Override
     public String toString() {
         return name + ": " + description;
+    }
+
+    public boolean haveId(int id) {
+        for (SpaceMarine sp : supervisor.getCollection()) {
+            if (sp.getId() == id) {
+                return true;
+            }
+        }
+        return false;
     }
 }

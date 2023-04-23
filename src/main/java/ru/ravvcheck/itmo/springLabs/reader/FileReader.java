@@ -4,13 +4,17 @@ package ru.ravvcheck.itmo.springLabs.reader;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
 import ru.ravvcheck.itmo.springLabs.forms.SpaceMarineStringForm;
 import ru.ravvcheck.itmo.springLabs.model.AstartesCategory;
 import ru.ravvcheck.itmo.springLabs.model.Chapter;
 import ru.ravvcheck.itmo.springLabs.model.Coordinates;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.time.ZonedDateTime;
 import java.util.*;
 
@@ -51,10 +55,11 @@ public class FileReader extends DataReader {
     public LinkedList<SpaceMarine> getData() {
         try {
             LinkedList<SpaceMarine> list = new LinkedList<>();
+            String[] header = {"id", "name", "coordinates_x", "coordinates_y", "creation_date", "health", "heart_count", "achievements", "category", "chapter_name", "chapter_marines_count"};
             CSVReader reader = new CSVReader(new java.io.FileReader(file));
-            String[] header = reader.readNext();
+            String[] headerFile = reader.readNext();
             Map<String, Integer> headerMap = new HashMap<>();
-            for (int i = 0; i < header.length; i++) {
+            for (int i = 0; i < headerFile.length; i++) {
                 headerMap.put(header[i], i);
             }
             String[] nextLine;
@@ -73,14 +78,17 @@ public class FileReader extends DataReader {
                 list.add(spaceMarine);
             }
             reader.close();
+            SpaceMarine.SpaceMarineValidation.listValidate(list);
             return list;
         } catch (CsvValidationException | IOException e) {
             System.out.println(("Ошибка чтения файла!" + e.getMessage()));
+            return new LinkedList<>();
         } catch (NumberFormatException e) {
             System.out.println(("Данные в файле неверны!\n"));
-        } catch (Exception e) {
-            System.out.println(("Данные в файле неверны!\n" + e.getMessage()));
+            return new LinkedList<>();
+        } catch (WrongValuesException e) {
+            System.out.println(e.getMessage());
+            return new LinkedList<>();
         }
-        return null;
     }
 }

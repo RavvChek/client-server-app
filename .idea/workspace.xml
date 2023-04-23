@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="all commands ready">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/ExitException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/RecursionScriptException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongArgumentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongCommandException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongValuesException.java" afterDir="false" />
+    <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="all">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fffff.csv" beforeDir="false" afterPath="$PROJECT_DIR$/fffff.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AbstractCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMinCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMinCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/UpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongCommandException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongValuesException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongValuesException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/ChapterBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/ChapterBuild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/CoordinatesBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/CoordinatesBuild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineBuild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineStringForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineStringForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Chapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/SpaceMarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/SpaceMarine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/supervisor/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/supervisor/Supervisor.java" afterDir="false" />
     </list>
@@ -221,7 +235,8 @@
       <workItem from="1681732684733" duration="10188000" />
       <workItem from="1681995979385" duration="21944000" />
       <workItem from="1682074881032" duration="11720000" />
-      <workItem from="1682102227827" duration="2059000" />
+      <workItem from="1682102227827" duration="11794000" />
+      <workItem from="1682195002165" duration="16368000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1679155532116</created>
@@ -328,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682101730599</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="all">
+      <created>1682107207169</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1682107207169</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,6 +409,7 @@
     <MESSAGE value="norm" />
     <MESSAGE value="first test run supervisor" />
     <MESSAGE value="all commands ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="all commands ready" />
+    <MESSAGE value="all" />
+    <option name="LAST_COMMIT_MESSAGE" value="all" />
   </component>
 </project>

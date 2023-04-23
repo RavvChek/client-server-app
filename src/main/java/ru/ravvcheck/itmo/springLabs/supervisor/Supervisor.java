@@ -2,6 +2,8 @@ package ru.ravvcheck.itmo.springLabs.supervisor;
 
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
 import ru.ravvcheck.itmo.springLabs.commands.*;
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongCommandException;
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
@@ -57,7 +59,7 @@ public class Supervisor implements Supervising {
     @Override
     public void run() throws Exception {
         this.active = true;
-        System.out.println("Добро пожаловать Ярослав Кулинич!");
+        System.out.println("Добро пожаловать, Ярослав Кулинич!");
         while (active) {
             waitCommand();
         }
@@ -79,13 +81,14 @@ public class Supervisor implements Supervising {
     @Override
     public void waitCommand() throws Exception {
         System.out.print(">>> ");
-        //try {
-        //if (!scanner.hasNext()) throw new MustExit();
-        String userCommand = scanner.nextLine().trim();
-        this.start(userCommand.split(" ", 2));
-        /*} catch (NoSuchElementException e) {
-            console.printError("Пользовательский ввод не обнаружен.");
-        } catch (IllegalArgument e) {
+        try {
+            //if (!scanner.hasNext()) throw new MustExit();
+            String userCommand = scanner.nextLine().trim();
+            this.start(userCommand.split(" ", 2));
+        } catch (WrongCommandException e) {
+            System.out.println(e.getMessage());
+        }
+        /*} catch (IllegalArgument e) {
             console.printError("Введены неправильные аргументы команды.");
         } catch (NoCommand e) {
             console.printError("Такой команды не существует.");
@@ -97,9 +100,12 @@ public class Supervisor implements Supervising {
         //}
     }
 
-    public void start(String[] argsCommand) throws Exception /*throws IllegalArgument, NoCommand, CommandRuntime, MustExit*/ {
+    public void start(String[] argsCommand) throws WrongCommandException, WrongValuesException {
         if (argsCommand[0].equals("")) return;
-        Command command = commandMap.get(argsCommand[0]);
+        Command command = commandMap.get(argsCommand[0].toLowerCase());
+        if (command == null) {
+            throw new WrongCommandException("Нет такой команды, введите команду help, чтобы увидеть список команд");
+        }
         if (argsCommand.length < 2)
             command.execute("");
         else
@@ -125,15 +131,13 @@ public class Supervisor implements Supervising {
             System.out.println();
         } catch (NoSuchElementException e) {
             System.out.println();
-        /*} catch (IllegalArgument exception) {
-            console.printError("Аргументы команд введены неверно.");
-        } catch (NoCommand exception) {
-            console.printError("Такой команды не существует.");
-        } catch (RecursionScript exception) {
+        } catch (WrongCommandException e) {
+            System.out.println(e.getMessage());
+        /*} catch (RecursionScriptException e) {
             console.printError("Скрипт не может вызваться рекурсивно.");
-        } catch (CommandRuntime exception) {
+        } catch (CommandRuntime e) {
             console.printError("Ошибка при исполнении.");
-        } catch (MustExit exception) {
+        } catch (MustExit e) {
             console.printError("Выход из программы. Bye!");
         }*/
         } catch (Exception e) {

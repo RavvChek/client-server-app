@@ -1,5 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.model;
 
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
+
 import java.util.Objects;
 
 public class Chapter {
@@ -52,20 +54,20 @@ public class Chapter {
     }
 
     public static class ChapterValidation {
-        public static void validate(Chapter chp) throws Exception {
+        public static void validate(Chapter chp) throws WrongValuesException {
             validateName(chp.getName());
             validateMarinesCount(chp.getMarinesCount());
         }
 
-        public static void validateName(String name) throws Exception {
+        public static void validateName(String name) throws WrongValuesException {
             if (name == null || name.equals("")) {
-                throw new Exception();
+                throw new WrongValuesException("Поле chapter_name не может быть null ил пустым");
             }
         }
 
-        public static void validateMarinesCount(long mrcount) throws Exception {
+        public static void validateMarinesCount(long mrcount) throws WrongValuesException {
             if (mrcount < 0 || mrcount > 1000) {
-                throw new Exception();
+                throw new WrongValuesException("Поле chapter_marines_count не может быть больше 1000 или быть меньше 0");
             }
         }
     }

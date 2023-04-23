@@ -1,5 +1,6 @@
 package ru.ravvcheck.itmo.springLabs.forms;
 
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
 import ru.ravvcheck.itmo.springLabs.model.Coordinates;
 import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
 
@@ -9,34 +10,39 @@ public class CoordinatesBuild implements Build {
     private final Scanner scanner = Supervisor.getScanner();
 
     @Override
-    public Coordinates build() {
+    public Coordinates build() throws WrongValuesException {
         return new Coordinates(buildX(), buildY());
     }
 
     public float buildX() {
-        String x;
-        long X;
-        System.out.println("Введите координату X");
-        x = scanner.nextLine().trim();
-        try {
-            X = Long.parseLong(x);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        while (true) {
+            String x;
+            float X;
+            System.out.println("Введите координату X");
+            x = scanner.nextLine().trim();
+            try {
+                return Float.parseFloat(x);
+            } catch (NumberFormatException e) {
+                System.out.println("Поле x принимает значения типа long");
+            }
         }
-        return Long.parseLong(x);
     }
 
-    public Double buildY() {
-        String y;
-        Double Y;
-        System.out.println("Введите координату Y");
-        y = scanner.nextLine().trim();
-        try {
-            Y = Double.valueOf(y);
-            Coordinates.CoordinatesValidation.validateY(Y);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    public Double buildY() throws WrongValuesException {
+        while (true) {
+            String y;
+            Double Y;
+            System.out.println("Введите координату Y");
+            y = scanner.nextLine().trim();
+            try {
+                Y = Double.valueOf(y);
+                Coordinates.CoordinatesValidation.validateY(Y);
+                return Double.valueOf(y);
+            } catch (NumberFormatException e) {
+                System.out.println("Поле y принимает double значения");
+            } catch (WrongValuesException e) {
+                System.out.println(e.getMessage());
+            }
         }
-        return Double.valueOf(y);
     }
 }

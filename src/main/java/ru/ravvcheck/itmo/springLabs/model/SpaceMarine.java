@@ -1,5 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.model;
 
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
+
 import java.time.ZonedDateTime;
 import java.util.LinkedList;
 import java.util.Objects;
@@ -180,13 +182,13 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
 
     public static class SpaceMarineValidation {
 
-        public static void listValidate(LinkedList<SpaceMarine> list) throws Exception {
+        public static void listValidate(LinkedList<SpaceMarine> list) throws WrongValuesException {
             for (SpaceMarine sp : list) {
                 validate(sp);
             }
         }
 
-        public static void validate(SpaceMarine sp) throws Exception {
+        public static void validate(SpaceMarine sp) throws WrongValuesException {
             validateName(sp.getName());
             validateAchievements(sp.getAchievements());
             validateChapter(sp.getChapter());
@@ -196,59 +198,60 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
             validateCoordinates(sp.getCoordinates());
         }
 
-        public static void validateUniqueId(LinkedList<SpaceMarine> list,  int id) throws Exception{
-            for(SpaceMarine sp : list){
-                if(sp.getId() == id){
-                    throw new Exception();
+        public static void validateUniqueId(LinkedList<SpaceMarine> list, int id) throws WrongValuesException {
+            for (SpaceMarine sp : list) {
+                if (sp.getId() == id) {
+                    throw new WrongValuesException("Поле id должно быть уникальным");
                 }
             }
         }
-        public static void validateName(String name) throws Exception {
+
+        public static void validateName(String name) throws WrongValuesException {
             if (name.equals("") || name == null) {
-                throw new Exception();
+                throw new WrongValuesException("Поле name не может быть null или пустым");
             }
         }
 
-        public static void validateCoordinates(Coordinates coordinates) throws Exception {
+        public static void validateCoordinates(Coordinates coordinates) throws WrongValuesException {
             if (coordinates == null) {
-                throw new Exception();
+                throw new WrongValuesException("Поле coordinates не может быть null");
             } else {
                 Coordinates.CoordinatesValidation.validate(coordinates);
             }
         }
 
-        public static void validateCreationDate(ZonedDateTime znd) throws Exception {
+        public static void validateCreationDate(ZonedDateTime znd) throws WrongValuesException {
             if (znd == null) {
-                throw new Exception();
+                throw new WrongValuesException("Поле creation_date не может быть null");
             }
         }
 
-        public static void validateHealth(Integer health) throws Exception {
+        public static void validateHealth(Integer health) throws WrongValuesException {
             if (health < 0) {
-                throw new Exception();
+                throw new WrongValuesException("Поле health не может быть меньше 0");
             }
         }
 
-        public static void validateHeartCount(int heartCount) throws Exception {
+        public static void validateHeartCount(int heartCount) throws WrongValuesException {
             if (heartCount > 3 || heartCount < 0) {
-                throw new Exception("RNVJVJKNREJKVNKRENV");
+                throw new WrongValuesException("Поле heart_count не может быть больше 3 и быть меньше 0");
             }
         }
 
-        public static void validateAchievements(String ach) throws Exception {
+        public static void validateAchievements(String ach) throws WrongValuesException {
             if (ach == null) {
-                throw new Exception();
+                throw new WrongValuesException("Поле achievements не может быть null");
             }
         }
 
-        public static void validateChapter(Chapter chapter) throws Exception {
+        public static void validateChapter(Chapter chapter) throws WrongValuesException {
             if (chapter == null) {
-                throw new Exception();
+                throw new WrongValuesException("Поле chapter не может быть null");
             }
             Chapter.ChapterValidation.validate(chapter);
         }
 
-        public static AstartesCategory createValidateAstartresCategory(String astartesCategory) throws Exception {
+        public static AstartesCategory createValidateAstartresCategory(String astartesCategory) throws WrongValuesException {
             AstartesCategory ac = null;
             switch (astartesCategory) {
                 case "SCOUT":
@@ -260,7 +263,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
                 case "SUPPRESSOR":
                     return AstartesCategory.SUPPRESSOR;
                 default:
-                    throw new Exception();
+                    throw new WrongValuesException("Поле category должно быть из списка категорий");
             }
         }
     }

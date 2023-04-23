@@ -1,5 +1,6 @@
 package ru.ravvcheck.itmo.springLabs;
 
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
 import ru.ravvcheck.itmo.springLabs.forms.SpaceMarineBuild;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 import ru.ravvcheck.itmo.springLabs.reader.DataReader;
@@ -17,7 +18,9 @@ public class LinkedListCollection {
     public LinkedListCollection(DataReader dataReader) throws Exception {
         this.dataReader = dataReader;
         data = dataReader.getData();
-        sortData();
+        if (!isEmptyData()) {
+            sortData();
+        }
         type = SpaceMarine.class.getName();
         date = new Date();
     }
@@ -40,12 +43,22 @@ public class LinkedListCollection {
         return count;
     }
 
+    public boolean isEmptyData() {
+        if (data.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public String getType() {
         return type;
     }
 
     public void clearData() {
-        data.clear();
+        if (!isEmptyData()) {
+            data.clear();
+        }
     }
 
     public void saveData() throws Exception {
@@ -53,100 +66,137 @@ public class LinkedListCollection {
     }
 
     public void show() {
-        for (SpaceMarine sp : data) {
-            System.out.println(sp.toString());
+        if (!isEmptyData()) {
+            for (SpaceMarine sp : data) {
+                System.out.println(sp.toString());
+            }
+        } else {
+            System.out.println("Коллекция пуста - нечего выводить");
         }
     }
 
     public void infoData() {
-        System.out.println("Тип: " + this.getType());
-        System.out.println("Дата инициализации: " + this.getDate().toString());
-        System.out.println("Количество элементов: " + this.getCount());
-    }
-
-    public void removeFirstItem() {
-        data.removeFirst();
-    }
-
-    public void removeByIdItem(int id) {
-        for (SpaceMarine sp : data) {
-            if (sp.getId() == id) {
-                data.remove(sp);
-            }
+        if (!isEmptyData()) {
+            System.out.println("Тип: " + this.getType());
+            System.out.println("Дата инициализации: " + this.getDate().toString());
+            System.out.println("Количество элементов: " + this.getCount());
+        } else {
+            System.out.println("Тип: " + "неизвестен");
+            System.out.println("Дата инициализации: " + "неизвестна");
+            System.out.println("Количество элементов: 0");
         }
     }
 
-    public void addItem(SpaceMarine sp) throws Exception {
+    public void removeFirstItem() {
+        if (!isEmptyData()) {
+            data.removeFirst();
+            System.out.println("Объект удалён");
+        } else {
+            System.out.println("Коллекция пуста - нечего удалять");
+        }
+    }
+
+    public void removeByIdItem(int id) {
+        if (!isEmptyData()) {
+            for (SpaceMarine sp : data) {
+                if (sp.getId() == id) {
+                    data.remove(sp);
+                    System.out.println("Объект удалён");
+                }
+            }
+        } else {
+            System.out.println("Коллекция пуста - нечего удалять");
+        }
+    }
+
+    public void addItem(SpaceMarine sp) {
         data.add(sp);
     }
-    public void addFirstItem(SpaceMarine sp){
+
+    public void addFirstItem(SpaceMarine sp) {
         data.addFirst(sp);
     }
 
-    public void updateItem(int id) throws Exception {
-        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
-        for (SpaceMarine sp : data) {
-            if (sp.getId() == id) {
-                SpaceMarine newSp = spaceMarineBuild.build();
-                sp.setId(newSp.getId());
-                sp.setName(newSp.getName());
-                sp.setCoordinatesX(newSp.getCoordinates().getX());
-                sp.setCoordinatesY(newSp.getCoordinates().getY());
-                sp.setCreationDate(ZonedDateTime.now());
-                sp.setHealth(newSp.getHealth());
-                sp.setHeartCount(newSp.getHeartCount());
-                sp.setAchievements(newSp.getAchievements());
-                sp.setCategory(sp.getCategory());
-                sp.setChapterName(sp.getChapter().getName());
-                sp.setChapterMarinesCount(newSp.getChapter().getMarinesCount());
+    public void updateItem(int id) throws WrongValuesException {
+        if (!isEmptyData()) {
+            SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
+            for (SpaceMarine sp : data) {
+                if (sp.getId() == id) {
+                    SpaceMarine newSp = spaceMarineBuild.build();
+                    sp.setId(newSp.getId());
+                    sp.setName(newSp.getName());
+                    sp.setCoordinatesX(newSp.getCoordinates().getX());
+                    sp.setCoordinatesY(newSp.getCoordinates().getY());
+                    sp.setCreationDate(ZonedDateTime.now());
+                    sp.setHealth(newSp.getHealth());
+                    sp.setHeartCount(newSp.getHeartCount());
+                    sp.setAchievements(newSp.getAchievements());
+                    sp.setCategory(sp.getCategory());
+                    sp.setChapterName(sp.getChapter().getName());
+                    sp.setChapterMarinesCount(newSp.getChapter().getMarinesCount());
+                }
             }
+        } else {
+            System.out.println("Коллекция пуста - нечего обновлять");
         }
     }
 
     public void groupCountingByName() {
-        HashSet<String> setName = new HashSet<>();
-        for (SpaceMarine sp : data) {
-            setName.add(sp.getName());
-        }
-        HashMap<String, List> hashMap = new HashMap<>();
-        for (String name : setName) {
-            List<SpaceMarine> list = new ArrayList<>();
+        if (!isEmptyData()) {
+            HashSet<String> setName = new HashSet<>();
             for (SpaceMarine sp : data) {
-                if (sp.getName().equals(name)) {
-                    list.add(sp);
-                }
+                setName.add(sp.getName());
             }
-            hashMap.put(name, list);
-        }
-        for (String name : setName) {
-            System.out.println(name + " " + hashMap.get(name).size());
+            HashMap<String, List> hashMap = new HashMap<>();
+            for (String name : setName) {
+                List<SpaceMarine> list = new ArrayList<>();
+                for (SpaceMarine sp : data) {
+                    if (sp.getName().equals(name)) {
+                        list.add(sp);
+                    }
+                }
+                hashMap.put(name, list);
+            }
+            for (String name : setName) {
+                System.out.println(name + " " + hashMap.get(name).size());
+            }
+        } else {
+            System.out.println("Коллекция пуста - нечего группировать");
         }
     }
 
     public void averageOfHealth() {
-        try {
-            int result = 0;
-            for (SpaceMarine sp : data) {
-                result += sp.getHealth();
+        if (!isEmptyData()) {
+            try {
+                int result = 0;
+                for (SpaceMarine sp : data) {
+                    result += sp.getHealth();
+                }
+                result /= data.size();
+                System.out.println("Среднее значение:" + result);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-            result /= data.size();
-            System.out.println("Среднее значение:" + result);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } else {
+            System.out.println("Коллекция пуста - среднее значение: 0");
         }
     }
 
     public void minById() {
-        int minId = 100000;
-        for (SpaceMarine sp : data) {
-            if (sp.getId() < minId) {
-                minId = sp.getId();
+        if (!isEmptyData()) {
+            int minId = 100000;
+            for (SpaceMarine sp : data) {
+                if (sp.getId() < minId) {
+                    minId = sp.getId();
+                }
             }
-        }
-        for (SpaceMarine sp : data) {
-            if (sp.getId() == minId) {
-                System.out.println(sp.toString());
+            for (SpaceMarine sp : data) {
+                if (sp.getId() == minId) {
+                    System.out.println(sp.toString());
+                }
             }
+        } else {
+            System.out.println("Коллекция пуста - такого объекта нет");
         }
     }
 
