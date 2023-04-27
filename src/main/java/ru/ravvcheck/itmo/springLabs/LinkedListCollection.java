@@ -119,7 +119,7 @@ public class LinkedListCollection {
 
     public void updateItem(int id) throws WrongValuesException {
         if (!isEmptyData()) {
-            SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
+            SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild(data);
             for (SpaceMarine sp : data) {
                 if (sp.getId() == id) {
                     SpaceMarine newSp = spaceMarineBuild.build();
@@ -165,12 +165,12 @@ public class LinkedListCollection {
         }
     }
 
-    public void averageOfHealth() {
+    public void averageOfHeartCount() {
         if (!isEmptyData()) {
             try {
                 int result = 0;
                 for (SpaceMarine sp : data) {
-                    result += sp.getHealth();
+                    result += sp.getHeartCount();
                 }
                 result /= data.size();
                 System.out.println("Среднее значение:" + result);

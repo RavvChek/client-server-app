@@ -11,14 +11,14 @@ public class ChapterBuild implements Build {
     private final Scanner scanner = Supervisor.getScanner();
 
     @Override
-    public Chapter build() throws WrongValuesException {
+    public Chapter build() {
         return new Chapter(buildName(), buildMarinesCount());
     }
 
-    public String buildName() throws WrongValuesException {
+    public String buildName() {
         while (true) {
             String name;
-            System.out.println("Введите имя главы");
+            System.out.println("Введите имя главы (поле не может быть null, строка не может быть пустой)");
             name = scanner.nextLine().trim();
             try {
                 SpaceMarine.SpaceMarineValidation.validateName(name);
@@ -32,7 +32,7 @@ public class ChapterBuild implements Build {
     public long buildMarinesCount() {
         while (true) {
             String marinesCount;
-            System.out.println("Введите количество десантников");
+            System.out.println("Введите количество десантников (Значение поля должно быть больше 0, Максимальное значение поля: 1000)");
             marinesCount = scanner.nextLine().trim();
             try {
                 Chapter.ChapterValidation.validateMarinesCount(Long.parseLong(marinesCount));

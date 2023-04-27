@@ -2,6 +2,7 @@ package ru.ravvcheck.itmo.springLabs.supervisor;
 
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
 import ru.ravvcheck.itmo.springLabs.commands.*;
+import ru.ravvcheck.itmo.springLabs.exceptions.RecursionScriptException;
 import ru.ravvcheck.itmo.springLabs.exceptions.WrongCommandException;
 import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
@@ -28,7 +29,7 @@ public class Supervisor implements Supervising {
         commandMap.put("add", new AddCommand(this));
         commandMap.put("add_if_max", new AddIfMaxCommand(this));
         commandMap.put("add_if_min", new AddIfMinCommand(this));
-        commandMap.put("average_of_health", new AverageOfHealthCommand(this));
+        commandMap.put("average_of_heart_count", new AverageOfHeartCountCommand(this));
         commandMap.put("clear", new ClearCommand(this));
         commandMap.put("execute_script", new ExecuteScriptCommand(this));
         commandMap.put("exit", new ExitCommand(this));
@@ -122,7 +123,7 @@ public class Supervisor implements Supervising {
                 }
                 if (userCmd.split(" ", 2)[0].equals("execute_script")) {
                     if (userCmd.split(" ", 2)[1].equals("execute_script")) {
-                        System.out.println("");
+                        throw new RecursionScriptException("Нельзя вывести скрипт рекурсивно");
                     }
                 }
                 start(userCmd.split(" ", 2));
@@ -133,9 +134,9 @@ public class Supervisor implements Supervising {
             System.out.println();
         } catch (WrongCommandException e) {
             System.out.println(e.getMessage());
-        /*} catch (RecursionScriptException e) {
-            console.printError("Скрипт не может вызваться рекурсивно.");
-        } catch (CommandRuntime e) {
+        } catch (RecursionScriptException e) {
+            System.out.println(e.getMessage());
+        /*} catch (CommandRuntime e) {
             console.printError("Ошибка при исполнении.");
         } catch (MustExit e) {
             console.printError("Выход из программы. Bye!");

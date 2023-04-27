@@ -165,14 +165,14 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
     @Override
     public int compareTo(SpaceMarine sp) {
         if (sp.getName().compareTo(this.getName()) == 0) {
-            if (sp.getHealth().compareTo(this.getHealth()) == 0) {
+            if (sp.getHeartCount() == this.getHeartCount()) {
                 return 0;
-            } else if (sp.getHealth().compareTo(this.getHealth()) > 0) {
+            } else if (sp.getHeartCount() > this.getHeartCount()) {
                 return 1;
             } else {
                 return -1;
             }
-        } else if (sp.getName().compareTo(this.getName()) > 0) {
+        } else if (sp.getName().compareTo(this.getName()) < 0) {
             return 1;
         } else {
             return -1;
@@ -227,9 +227,15 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         }
 
         public static void validateHealth(Integer health) throws WrongValuesException {
-            if (health < 0) {
-                throw new WrongValuesException("Поле health не может быть меньше 0");
+            if (health == null) {
+                System.out.println();
+            } else {
+                if (health < 0) {
+                    throw new WrongValuesException("Поле health не может быть меньше 0");
+                }
+
             }
+
         }
 
         public static void validateHeartCount(int heartCount) throws WrongValuesException {
@@ -239,7 +245,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         }
 
         public static void validateAchievements(String ach) throws WrongValuesException {
-            if (ach == null) {
+            if (ach == null || ach.equals("")) {
                 throw new WrongValuesException("Поле achievements не может быть null");
             }
         }
@@ -252,18 +258,21 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         }
 
         public static AstartesCategory createValidateAstartresCategory(String astartesCategory) throws WrongValuesException {
-            AstartesCategory ac = null;
             switch (astartesCategory) {
-                case "SCOUT":
+                case "scout":
                     return AstartesCategory.SCOUT;
-                case "ASSAULT":
+                case "assault":
                     return AstartesCategory.ASSAULT;
-                case "APOTHECARY":
+                case "apothecary":
                     return AstartesCategory.APOTHECARY;
-                case "SUPPRESSOR":
+                case "suppressor":
                     return AstartesCategory.SUPPRESSOR;
                 default:
-                    throw new WrongValuesException("Поле category должно быть из списка категорий");
+                    if (astartesCategory.equals("")) {
+                        return null;
+                    } else {
+                        throw new WrongValuesException("Поле category должно быть из списка категорий");
+                    }
             }
         }
     }

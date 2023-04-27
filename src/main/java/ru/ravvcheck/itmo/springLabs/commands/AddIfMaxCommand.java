@@ -13,7 +13,7 @@ public class AddIfMaxCommand extends AbstractCommand {
 
     @Override
     public void execute(String args) throws WrongValuesException {
-        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
+        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild(supervisor.getCollection());
         SpaceMarine sp = spaceMarineBuild.build();
         if (supervisor.getCollection().getLast().compareTo(sp) < 0) {
             supervisor.getDatabase().addItem(sp);

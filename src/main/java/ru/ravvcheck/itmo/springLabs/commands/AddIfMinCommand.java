@@ -12,7 +12,7 @@ public class AddIfMinCommand extends AbstractCommand {
 
     @Override
     public void execute(String args) throws WrongValuesException {
-        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
+        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild(supervisor.getCollection());
         SpaceMarine sp = spaceMarineBuild.build();
         if (supervisor.getCollection().getFirst().compareTo(sp) > 0) {
             supervisor.getDatabase().addFirstItem(sp);

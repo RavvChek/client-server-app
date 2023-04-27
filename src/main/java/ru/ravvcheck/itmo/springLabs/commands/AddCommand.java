@@ -11,7 +11,7 @@ public class AddCommand extends AbstractCommand {
 
     @Override
     public void execute(String args) throws WrongValuesException {
-        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild();
+        SpaceMarineBuild spaceMarineBuild = new SpaceMarineBuild(supervisor.getCollection());
         this.supervisor.getDatabase().addItem(spaceMarineBuild.build());
         System.out.println("Объект создан");
         supervisor.getDatabase().sortData();

@@ -10,7 +10,7 @@ public class CoordinatesBuild implements Build {
     private final Scanner scanner = Supervisor.getScanner();
 
     @Override
-    public Coordinates build() throws WrongValuesException {
+    public Coordinates build() {
         return new Coordinates(buildX(), buildY());
     }
 
@@ -28,11 +28,11 @@ public class CoordinatesBuild implements Build {
         }
     }
 
-    public Double buildY() throws WrongValuesException {
+    public Double buildY() {
         while (true) {
             String y;
             Double Y;
-            System.out.println("Введите координату Y");
+            System.out.println("Введите координату Y (Значение поля должно быть больше -903, Поле не может быть null)");
             y = scanner.nextLine().trim();
             try {
                 Y = Double.valueOf(y);

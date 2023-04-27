@@ -56,7 +56,11 @@ public class SpaceMarineStringForm {
     }
 
     public static String getCategoryStr(SpaceMarine sp) {
-        return sp.getCategory().toString();
+        if (sp.getCategory() == null) {
+            return "null";
+        } else {
+            return sp.getCategory().toString();
+        }
     }
 
     public static String getChapterStrName(SpaceMarine sp) {
