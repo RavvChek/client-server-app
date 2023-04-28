@@ -17,8 +17,12 @@ public class HelpCommand extends AbstractCommand {
     }
 
     public void helpCommand(String commandName) {
-        Command command = supervisor.getCommandByName(commandName);
-        System.out.println(command.toString());
+        try {
+            Command command = supervisor.getCommandByName(commandName);
+            System.out.println(command.toString());
+        } catch (NullPointerException e) {
+            System.out.println("Название команды не найдено, впишите команду help, чтобы получить список всех команд");
+        }
     }
 
     public void helpAll() {

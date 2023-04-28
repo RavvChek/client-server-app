@@ -13,6 +13,7 @@ import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
 
 import java.io.*;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 
 public class FileReader extends DataReader {
@@ -34,29 +35,44 @@ public class FileReader extends DataReader {
 
     @Override
     public void saveData(LinkedList<SpaceMarine> values) throws Exception {
-        CSVWriter writer = new CSVWriter(new OutputStreamWriter(new FileOutputStream(filePath)), ',', CSVWriter.DEFAULT_QUOTE_CHARACTER,
-                CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
-        String[] header = {"id", "name", "coordinates_x", "coordinates_y", "creation_date", "health", "heart_count", "achievements", "category", "chapter_name", "chapter_marines_count"};
-        writer.writeNext(header);
-        List<String[]> data = new ArrayList<>();
-        for (SpaceMarine spaceMarine : values) {
-            String[] line = {
-                    SpaceMarineStringForm.getIdStr(spaceMarine),
-                    SpaceMarineStringForm.getName(spaceMarine),
-                    SpaceMarineStringForm.getCoordinateXStr(spaceMarine),
-                    SpaceMarineStringForm.getCoordinatesYStr(spaceMarine),
-                    SpaceMarineStringForm.getCreationDateStr(spaceMarine),
-                    SpaceMarineStringForm.getHealthStr(spaceMarine),
-                    SpaceMarineStringForm.getHeartCountStr(spaceMarine),
-                    SpaceMarineStringForm.getAchievements(spaceMarine),
-                    SpaceMarineStringForm.getCategoryStr(spaceMarine),
-                    SpaceMarineStringForm.getChapterStrName(spaceMarine),
-                    SpaceMarineStringForm.getChapterMarinesCountStr(spaceMarine)
-            };
-            data.add(line);
+        if (!file.exists()) {
+            try {
+                file = new File("new_file");
+                file.createNewFile();
+            } catch (IOException e) {
+                System.out.println("Невозможно создать файл");
+            }
         }
-        writer.writeAll(data);
-        writer.close();
+        try {
+            CSVWriter writer = new CSVWriter(new OutputStreamWriter(new FileOutputStream(filePath)), ',', CSVWriter.DEFAULT_QUOTE_CHARACTER,
+                    CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
+            String[] header = {"id", "name", "coordinates_x", "coordinates_y", "creation_date", "health", "heart_count", "achievements", "category", "chapter_name", "chapter_marines_count"};
+            writer.writeNext(header);
+            List<String[]> data = new ArrayList<>();
+            for (SpaceMarine spaceMarine : values) {
+                String[] line = {
+                        SpaceMarineStringForm.getIdStr(spaceMarine),
+                        SpaceMarineStringForm.getName(spaceMarine),
+                        SpaceMarineStringForm.getCoordinateXStr(spaceMarine),
+                        SpaceMarineStringForm.getCoordinatesYStr(spaceMarine),
+                        SpaceMarineStringForm.getCreationDateStr(spaceMarine),
+                        SpaceMarineStringForm.getHealthStr(spaceMarine),
+                        SpaceMarineStringForm.getHeartCountStr(spaceMarine),
+                        SpaceMarineStringForm.getAchievements(spaceMarine),
+                        SpaceMarineStringForm.getCategoryStr(spaceMarine),
+                        SpaceMarineStringForm.getChapterStrName(spaceMarine),
+                        SpaceMarineStringForm.getChapterMarinesCountStr(spaceMarine)
+                };
+                data.add(line);
+            }
+            writer.writeAll(data);
+            System.out.println("Коллекция сохранена");
+            writer.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Файла не существует");
+        } catch (IOException e) {
+            System.out.println("Непонятная ошибка, коллекция не сохранена");
+        }
     }
 
     public LinkedList<SpaceMarine> getData() {
@@ -70,7 +86,7 @@ public class FileReader extends DataReader {
                 throw new IOException();
             } else {
                 for (int i = 0; i < headerFile.length; i++) {
-                    headerMap.put(header[i], i);
+                    headerMap.put(headerFile[i], i);
                 }
             }
             String[] nextLine;
@@ -79,7 +95,13 @@ public class FileReader extends DataReader {
                 SpaceMarine spaceMarine = new SpaceMarine();
                 spaceMarine.setId(Integer.parseInt(nextLine[headerMap.get("id")]));
                 spaceMarine.setName(nextLine[headerMap.get("name")]);
-                spaceMarine.setCoordinates(new Coordinates(Float.parseFloat(nextLine[headerMap.get("coordinates_x")]), Double.parseDouble(nextLine[headerMap.get("coordinates_y")])));
+                String X = nextLine[headerMap.get("coordinates_x")];
+                String Y = nextLine[headerMap.get("coordinates_y")];
+                if (X.equals("NaN")) {
+                    spaceMarine.setCoordinates(new Coordinates(Float.NaN, Double.parseDouble(Y)));
+                } else {
+                    spaceMarine.setCoordinates(new Coordinates(Float.parseFloat(X), Double.parseDouble(Y)));
+                }
                 spaceMarine.setCreationDate(ZonedDateTime.parse(nextLine[headerMap.get("creation_date")]));
                 String health = nextLine[headerMap.get("health")];
                 if (health.equals("null")) {
@@ -102,6 +124,10 @@ public class FileReader extends DataReader {
             SpaceMarine.SpaceMarineValidation.listValidate(list);
             listValidateFileId(list);
             return list;
+        } catch (DateTimeParseException e) {
+            System.out.println("Ошибка в дате инициализации объектов");
+        } catch (NullPointerException e) {
+            System.out.println("Неверные данные в файле");
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
             return new LinkedList<>();

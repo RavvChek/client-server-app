@@ -21,7 +21,11 @@ public class CoordinatesBuild implements Build {
             System.out.println("Введите координату X");
             x = scanner.nextLine().trim();
             try {
-                return Float.parseFloat(x);
+                if (x.equals("")) {
+                    return Float.NaN;
+                } else {
+                    return Float.parseFloat(x);
+                }
             } catch (NumberFormatException e) {
                 System.out.println("Поле x принимает значения типа long");
             }

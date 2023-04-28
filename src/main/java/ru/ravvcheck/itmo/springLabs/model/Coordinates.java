@@ -51,12 +51,21 @@ public class Coordinates {
                 ", y=" + y.toString() +
                 '}';
     }
+
     public static class CoordinatesValidation {
         public static void validate(Coordinates coordinates) throws WrongValuesException {
+            validateX(coordinates.getX());
             validateY(coordinates.getY());
         }
+
+        public static void validateX(float x) throws WrongValuesException {
+            if (x > Float.MAX_VALUE) {
+                throw new WrongValuesException("Поле X не может быть таким большим");
+            }
+        }
+
         public static void validateY(Double y) throws WrongValuesException {
-            if (y < -903 || y == null){
+            if (y < -903 || y == null || y > Double.MAX_VALUE) {
                 throw new WrongValuesException("Поле coordinates_y не может быть меньше -903 или быть null");
             }
         }

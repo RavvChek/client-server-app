@@ -124,7 +124,7 @@ public class SpaceMarineBuild implements Build {
         while (true) {
             String astartesCategory;
             System.out.println("Список всех категорий:");
-            System.out.println(AstartesCategory.APOTHECARY.toString() + "\n" + AstartesCategory.ASSAULT.toString() + "\n" + AstartesCategory.SCOUT.toString() + "\n" + AstartesCategory.SUPPRESSOR.toString());
+            System.out.println("1)" + AstartesCategory.APOTHECARY.toString() + "\n2)" + AstartesCategory.ASSAULT.toString() + "\n3)" + AstartesCategory.SCOUT.toString() + "\n4)" + AstartesCategory.SUPPRESSOR.toString());
             System.out.println("Введите категорию десантника из предложенного списка (Поле может быть null)");
             astartesCategory = scanner.nextLine().trim().toLowerCase();
             try {

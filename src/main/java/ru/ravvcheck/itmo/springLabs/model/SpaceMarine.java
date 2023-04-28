@@ -189,6 +189,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         }
 
         public static void validate(SpaceMarine sp) throws WrongValuesException {
+            validateId(sp.getId());
             validateName(sp.getName());
             validateAchievements(sp.getAchievements());
             validateChapter(sp.getChapter());
@@ -230,7 +231,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
             if (health == null) {
                 System.out.println();
             } else {
-                if (health < 0) {
+                if (health < 0 || health > Integer.MAX_VALUE) {
                     throw new WrongValuesException("Поле health не может быть меньше 0");
                 }
 
@@ -267,12 +268,26 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
                     return AstartesCategory.APOTHECARY;
                 case "suppressor":
                     return AstartesCategory.SUPPRESSOR;
+                case "3":
+                    return AstartesCategory.SCOUT;
+                case "2":
+                    return AstartesCategory.ASSAULT;
+                case "1":
+                    return AstartesCategory.APOTHECARY;
+                case "4":
+                    return AstartesCategory.SUPPRESSOR;
                 default:
                     if (astartesCategory.equals("")) {
                         return null;
                     } else {
                         throw new WrongValuesException("Поле category должно быть из списка категорий");
                     }
+            }
+        }
+
+        public static void validateId(int id) throws WrongValuesException {
+            if (id < 0) {
+                throw new WrongValuesException("Поле id не может быть отрицательным");
             }
         }
     }

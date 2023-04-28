@@ -1,7 +1,7 @@
 package ru.ravvcheck.itmo.springLabs.exceptions;
 
 public class WrongArgumentException extends Exception{
-    WrongArgumentException(String message){
+    public WrongArgumentException(String message){
         super(message);
     }
 }

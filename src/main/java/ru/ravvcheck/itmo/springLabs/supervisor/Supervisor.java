@@ -3,6 +3,7 @@ package ru.ravvcheck.itmo.springLabs.supervisor;
 import ru.ravvcheck.itmo.springLabs.LinkedListCollection;
 import ru.ravvcheck.itmo.springLabs.commands.*;
 import ru.ravvcheck.itmo.springLabs.exceptions.RecursionScriptException;
+import ru.ravvcheck.itmo.springLabs.exceptions.WrongArgumentException;
 import ru.ravvcheck.itmo.springLabs.exceptions.WrongCommandException;
 import ru.ravvcheck.itmo.springLabs.exceptions.WrongValuesException;
 import ru.ravvcheck.itmo.springLabs.model.SpaceMarine;
@@ -10,17 +11,16 @@ import ru.ravvcheck.itmo.springLabs.reader.DataReader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class Supervisor implements Supervising {
     private static Scanner scanner;
+    private static List<Path> stack = new LinkedList<>();
     private final LinkedListCollection database;
     private final HashMap<String, Command> commandMap;
     private boolean active;
-    private Scanner fileScanner;
 
     public Supervisor(DataReader reader) throws Exception {
         this.database = new LinkedListCollection(reader);
@@ -83,37 +83,31 @@ public class Supervisor implements Supervising {
     public void waitCommand() throws Exception {
         System.out.print(">>> ");
         try {
-            //if (!scanner.hasNext()) throw new MustExit();
             String userCommand = scanner.nextLine().trim();
             this.start(userCommand.split(" ", 2));
         } catch (WrongCommandException e) {
             System.out.println(e.getMessage());
+        } catch (WrongArgumentException e) {
+            System.out.println(e.getMessage());
         }
-        /*} catch (IllegalArgument e) {
-            console.printError("Введены неправильные аргументы команды.");
-        } catch (NoCommand e) {
-            console.printError("Такой команды не существует.");
-        } catch (CommandRuntime e) {
-            console.printError("Ошибка при исполнении команды.");
-        } catch (MustExit e) {
-            console.printError("Выход из программы. Bye!");
-            return;*/
         //}
     }
 
-    public void start(String[] argsCommand) throws WrongCommandException, WrongValuesException {
+    public void start(String[] argsCommand) throws WrongCommandException, WrongValuesException, WrongArgumentException {
         if (argsCommand[0].equals("")) return;
         Command command = commandMap.get(argsCommand[0].toLowerCase());
         if (command == null) {
             throw new WrongCommandException("Нет такой команды, введите команду help, чтобы увидеть список команд");
         }
-        if (argsCommand.length < 2)
+        if (argsCommand.length < 2) {
             command.execute("");
-        else
+        } else {
             command.execute(argsCommand[1]);
+        }
     }
 
     public void executeScript(String fileName) {
+        stack.add(Paths.get(fileName));
         try (Scanner scrScanner = new Scanner(new File(fileName))) {
             if (!scrScanner.hasNext()) throw new NoSuchElementException();
             do {
@@ -122,12 +116,14 @@ public class Supervisor implements Supervising {
                     userCmd = scrScanner.nextLine().trim() + " ";
                 }
                 if (userCmd.split(" ", 2)[0].equals("execute_script")) {
-                    if (userCmd.split(" ", 2)[1].equals("execute_script")) {
+                    if (stack.contains(Paths.get(userCmd.split(" ", 2)[1].trim()))) {
                         throw new RecursionScriptException("Нельзя вывести скрипт рекурсивно");
                     }
                 }
                 start(userCmd.split(" ", 2));
             } while (scrScanner.hasNextLine());
+        } catch (WrongArgumentException e) {
+            System.out.println(e.getMessage());
         } catch (FileNotFoundException e) {
             System.out.println();
         } catch (NoSuchElementException e) {
@@ -136,13 +132,8 @@ public class Supervisor implements Supervising {
             System.out.println(e.getMessage());
         } catch (RecursionScriptException e) {
             System.out.println(e.getMessage());
-        /*} catch (CommandRuntime e) {
-            console.printError("Ошибка при исполнении.");
-        } catch (MustExit e) {
-            console.printError("Выход из программы. Bye!");
-        }*/
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("Непредвиденная ошибка");
         }
     }
 }
