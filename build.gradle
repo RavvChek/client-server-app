@@ -1,36 +1,75 @@
-plugins {
-    id 'java'
-}
-
-group 'ru.ravvcheck.itmo.springLabs'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'ch.ninecode.cim:CIMReader:2.12-3.0.1-5.1.1'
-    implementation 'io.github.qiunet:CfgReader:7.0.5'
-    implementation 'org.jumpmind.symmetric:symmetric-csv:3.5.19'
-    implementation 'com.epam:parso:2.0.14'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
-    implementation group: 'com.opencsv', name: 'opencsv', version: '5.7.1'
-
-}
-
-jar {
-    manifest {
-        attributes(
-                'Main-Class': 'ru.ravvcheck.itmo.springLabs'
-        )
+subprojects {
+    apply plugin: 'java'
+    //apply plugin: 'com.github.johnrengelman.shadow'
+    repositories {
+        mavenCentral()
     }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    dependencies {
+        // https://mvnrepository.com/artifact/com.google.code.gson/gson
+        implementation 'com.google.code.gson:gson:2.10.1'
     }
 }
 
-test {
-    useJUnitPlatform()
+
+project(':server') {
+    apply plugin: 'application'
+    mainClassName = 'server.AppServer'
+    dependencies {
+        implementation project(':general')
+        implementation group: 'com.opencsv', name: 'opencsv', version: '5.7.1'
+        // https://mvnrepository.com/artifact/com.google.code.gson/gson
+        implementation 'com.google.code.gson:gson:2.10.1'
+        // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    }
+    jar {
+        manifest {
+            attributes 'Main-Class': 'server.AppServer'
+        }
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    task fatJarServer(type: Jar) {
+        manifest {
+            attributes 'Main-Class': 'server.AppServer'
+        }
+        baseName = 'lab6-server'
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+        with jar
+    }
+
+}
+
+project(':client') {
+    apply plugin: 'application'
+    mainClassName = 'client.AppClient'
+    dependencies {
+        implementation project(':general')
+        implementation project(':server')
+        implementation group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.15'
+    }
+    run {
+        standardInput = System.in
+    }
+    jar {
+        manifest {
+            attributes 'Main-Class': 'client.AppClient'
+        }
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    task fatJarClient(type: Jar) {
+        manifest {
+            attributes 'Main-Class': 'client.AppClient'
+        }
+        baseName = 'lab6-client'
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+        with jar
+    }
+
 }

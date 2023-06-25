@@ -1,10 +1,7 @@
 package ru.ravvcheck.itmo.springLabs;
 
 
-import ru.ravvcheck.itmo.springLabs.reader.FileReader;
-import ru.ravvcheck.itmo.springLabs.supervisor.Supervisor;
-
-import java.util.Scanner;
+import java.io.FileReader;
 
 public class Main {
     public static void main(String[] args) throws Exception {
