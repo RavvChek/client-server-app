@@ -13,17 +13,21 @@ subprojects {
 
 project(':server') {
     apply plugin: 'application'
-    mainClassName = 'server.AppServer'
+    mainClassName = 'AppServer'
     dependencies {
         implementation project(':general')
         implementation group: 'com.opencsv', name: 'opencsv', version: '5.7.1'
         // https://mvnrepository.com/artifact/com.google.code.gson/gson
         implementation 'com.google.code.gson:gson:2.10.1'
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
+        implementation 'org.postgresql:postgresql:42.6.0'
+
+
+
     }
     jar {
         manifest {
-            attributes 'Main-Class': 'server.AppServer'
+            attributes 'Main-Class': 'AppServer'
         }
     }
     tasks.withType(JavaCompile) {
@@ -32,7 +36,7 @@ project(':server') {
 
     task fatJarServer(type: Jar) {
         manifest {
-            attributes 'Main-Class': 'server.AppServer'
+            attributes 'Main-Class': 'AppServer'
         }
         baseName = 'lab6-server'
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -44,18 +48,19 @@ project(':server') {
 
 project(':client') {
     apply plugin: 'application'
-    mainClassName = 'client.AppClient'
+    mainClassName = 'AppClient'
     dependencies {
         implementation project(':general')
         implementation project(':server')
         implementation group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.15'
+        implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
     }
     run {
         standardInput = System.in
     }
     jar {
         manifest {
-            attributes 'Main-Class': 'client.AppClient'
+            attributes 'Main-Class': 'AppClient'
         }
     }
     tasks.withType(JavaCompile) {
@@ -64,7 +69,7 @@ project(':client') {
 
     task fatJarClient(type: Jar) {
         manifest {
-            attributes 'Main-Class': 'client.AppClient'
+            attributes 'Main-Class': 'AppClient'
         }
         baseName = 'lab6-client'
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE

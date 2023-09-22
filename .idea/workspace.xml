@@ -4,83 +4,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="обработка">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/AppClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/Management.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/ProcessingCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/ScannerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/general/src/main/java/exceptions/ConnectionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/general/src/main/java/exceptions/ScriptErrorException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/general/src/main/java/transfers/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/general/src/main/java/transfers/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script_add" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script_rec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/AppServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/RequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/AddIfMinCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/exceptions/ConnectException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/exceptions/ServerLaunchException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="3b825d9d-eb5f-4759-9bd2-64c3714e4d5b" name="Changes" comment="6 лаба">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/AskUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/general/src/main/java/transfers/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/postgresql-42.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/commands/AuthorizationCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/commands/RegisterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/exceptions/UserExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/exceptions/UserNotfoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/DatabaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/DatabaseManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/PasswordHasher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/SQLRequests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/ThreadClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fffff.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.csv.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script" beforeDir="false" afterPath="$PROJECT_DIR$/script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/LinkedListCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/LinkedListCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/AbstractCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/AddIfMaxCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AddIfMinCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/AverageOfHeartCountCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/AverageOfHeartCountCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/ClearCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/ExitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/GroupCountingByNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/GroupCountingByNameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/InfoCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/MinByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/MinByIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/RemoveByIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/RemoveFirstCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/RemoveFirstCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/SaveCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/ShowCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/commands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/UpdateCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/ExitException.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/exceptions/ExitException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/RecursionScriptException.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/exceptions/RecursionScriptException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongArgumentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/exceptions/WrongArgumentException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/exceptions/WrongCommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/exceptions/WrongValuesException.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/exceptions/WrongValuesException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/Build.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/forms/Build.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/ChapterBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/forms/ChapterBuild.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/CoordinatesBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/forms/CoordinatesBuild.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/forms/SpaceMarineBuild.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/forms/SpaceMarineStringForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/forms/SpaceMarineStringForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/AstartesCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/model/AstartesCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/model/Chapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/model/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/model/SpaceMarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/model/SpaceMarine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/reader/DataReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/reader/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/reader/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/reader/Parsing.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/reader/Parsing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/supervisor/Supervising.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/supervisor/Supervising.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/supervisor/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/supervisor/Supervisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/AppClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/AppClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/Management.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Management.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/ProcessingCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ProcessingCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/ScannerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ScannerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/src/main/java/model/AstartesCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/model/AstartesCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/src/main/java/model/SpaceMarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/model/SpaceMarine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/src/main/java/transfers/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/general/src/main/java/transfers/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/AppServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/AppServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/LinkedListCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/LinkedListCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/AbstractCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/AddIfMaxCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/AddIfMinCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/AddIfMinCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/AverageOfHeartCountCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/AverageOfHeartCountCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/GroupCountingByNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/GroupCountingByNameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/MinByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/MinByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/RemoveFirstCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/RemoveFirstCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/ShowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/UpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/exceptions/ConnectException.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/exceptions/ConnectException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/exceptions/ServerLaunchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/exceptions/ServerLaunchException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/forms/Build.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/forms/Build.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/forms/ChapterBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/forms/ChapterBuild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/forms/CoordinatesBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/forms/CoordinatesBuild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/forms/SpaceMarineBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/forms/SpaceMarineBuild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/forms/SpaceMarineStringForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/forms/SpaceMarineStringForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/reader/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/reader/DataReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/reader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/reader/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/reader/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/reader/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/reader/Parsing.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/reader/Parsing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/supervisor/Supervising.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/Supervising.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/supervisor/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/supervisor/Supervisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravvcheck/itmo/springLabs/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../labSpringProg\exportToHTML" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -101,48 +94,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="labSpringProg" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="labSpringProg" type="f1a62948:ProjectNode" />
-                <item name="client" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="labSpringProg" type="f1a62948:ProjectNode" />
-                <item name="client" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="labSpringProg" type="f1a62948:ProjectNode" />
-                <item name="client" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="labSpringProg" type="f1a62948:ProjectNode" />
-                <item name="server" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="labSpringProg" type="f1a62948:ProjectNode" />
-                <item name="server" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="labSpringProg" type="f1a62948:ProjectNode" />
-                <item name="server" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -155,6 +107,7 @@
         <option value="module-info" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="Version Catalog File.versions" />
         <option value="Class" />
       </list>
     </option>
@@ -179,9 +132,6 @@
     &quot;author&quot;: &quot;RavvChek&quot;
   }
 }</component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="f0ad4669-8e92-4cf8-b8d5-45776afad490" />
-  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -190,9 +140,20 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/build/libs/labSpringProg.jar!/META-INF/MANIFEST.MF" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/client/build/libs/client.jar!/META-INF/MANIFEST.MF" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2NC4U1OYBF1HBw42DCVa6viNNg3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -202,28 +163,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/RavvCheck1/Downloads/postgresql-42.6.0.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.28735632",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\RavvCheck1\IdeaProjects\labSpringProg\libs" />
       <recent name="C:\Users\ravil\IdeaProjects\labSpringProg\client\src\main\java" />
       <recent name="C:\Users\ravil\IdeaProjects\labSpringProg\general\src\main\java" />
       <recent name="C:\Users\ravil\IdeaProjects\labSpringProg\server\src\main\java" />
@@ -233,11 +202,11 @@
       <recent name="ru.ravvcheck.itmo.springLabs.general" />
     </key>
   </component>
-  <component name="RunManager" selected="Compound.run">
-    <configuration name="AppClient" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Gradle.labSpringProg:server [distTar]">
+    <configuration name="AppClient" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="client.AppClient" />
+      <option name="MAIN_CLASS_NAME" value="AppClient" />
       <module name="labSpringProg.client.main" />
       <option name="PROGRAM_PARAMETERS" value="127.0.0.1 8009" />
       <method v="2">
@@ -275,9 +244,9 @@
     <configuration name="AppServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="server.AppServer" />
+      <option name="MAIN_CLASS_NAME" value="AppServer" />
       <module name="labSpringProg.server.main" />
-      <option name="PROGRAM_PARAMETERS" value="fffff.csv" />
+      <option name="PROGRAM_PARAMETERS" value="f" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -285,48 +254,6 @@
     <configuration name="run" type="CompoundRunConfigurationType">
       <toRun name="AppClient" type="Application" />
       <toRun name="AppServer" type="Application" />
-      <method v="2" />
-    </configuration>
-    <configuration name="labSpringProg [fatJarClient]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="fatJarClient" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="labSpringProg [fatJarServer]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="fatJarServer" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="labSpringProg" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
@@ -346,9 +273,10 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="labSpringProg:client [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="labSpringProg:client [assembleDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/client" />
@@ -359,7 +287,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="assembleDist" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -367,9 +295,10 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="labSpringProg:client [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="labSpringProg:client [distTar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/client" />
@@ -380,7 +309,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="jar" />
+            <option value="distTar" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -388,9 +317,10 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="labSpringProg:server [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="labSpringProg:server [assembleDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
@@ -401,7 +331,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="jar" />
+            <option value="assembleDist" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -409,6 +339,51 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="labSpringProg:server [distTar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="distTar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="labSpringProg:server [distZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="distZip" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <list>
@@ -416,19 +391,19 @@
       <item itemvalue="Application.AppClient" />
       <item itemvalue="Compound.run" />
       <item itemvalue="Gradle.labSpringProg" />
-      <item itemvalue="Gradle.labSpringProg [fatJarClient]" />
-      <item itemvalue="Gradle.labSpringProg [fatJarServer]" />
-      <item itemvalue="Gradle.labSpringProg:client [build]" />
-      <item itemvalue="Gradle.labSpringProg:client [jar]" />
-      <item itemvalue="Gradle.labSpringProg:server [jar]" />
+      <item itemvalue="Gradle.labSpringProg:client [assembleDist]" />
+      <item itemvalue="Gradle.labSpringProg:client [distTar]" />
+      <item itemvalue="Gradle.labSpringProg:server [assembleDist]" />
+      <item itemvalue="Gradle.labSpringProg:server [distTar]" />
+      <item itemvalue="Gradle.labSpringProg:server [distZip]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.labSpringProg [fatJarClient]" />
-        <item itemvalue="Gradle.labSpringProg [fatJarServer]" />
-        <item itemvalue="Gradle.labSpringProg:server [jar]" />
-        <item itemvalue="Gradle.labSpringProg:client [jar]" />
-        <item itemvalue="Gradle.labSpringProg:client [build]" />
+        <item itemvalue="Gradle.labSpringProg:server [distTar]" />
+        <item itemvalue="Gradle.labSpringProg:client [distTar]" />
+        <item itemvalue="Gradle.labSpringProg:client [assembleDist]" />
+        <item itemvalue="Gradle.labSpringProg:server [assembleDist]" />
+        <item itemvalue="Gradle.labSpringProg:server [distZip]" />
       </list>
     </recent_temporary>
   </component>
@@ -509,6 +484,52 @@
       <workItem from="1686671909560" duration="1669000" />
       <workItem from="1686829385973" duration="3172000" />
       <workItem from="1686837038511" duration="5519000" />
+      <workItem from="1687718735475" duration="662000" />
+      <workItem from="1688686095888" duration="851000" />
+      <workItem from="1688918743302" duration="1086000" />
+      <workItem from="1689153954198" duration="37000" />
+      <workItem from="1689495569794" duration="642000" />
+      <workItem from="1690534042421" duration="11019000" />
+      <workItem from="1690799015552" duration="8556000" />
+      <workItem from="1690877077703" duration="7942000" />
+      <workItem from="1691054786675" duration="14533000" />
+      <workItem from="1691134556525" duration="352000" />
+      <workItem from="1691143139848" duration="11738000" />
+      <workItem from="1691398584005" duration="7422000" />
+      <workItem from="1691474740053" duration="236000" />
+      <workItem from="1691476572064" duration="311000" />
+      <workItem from="1691515093999" duration="10360000" />
+      <workItem from="1691561793967" duration="2710000" />
+      <workItem from="1691827208807" duration="10423000" />
+      <workItem from="1691842370741" duration="528000" />
+      <workItem from="1691858867011" duration="738000" />
+      <workItem from="1691908571299" duration="1066000" />
+      <workItem from="1691910697011" duration="9096000" />
+      <workItem from="1692002983874" duration="12921000" />
+      <workItem from="1692099164068" duration="27000" />
+      <workItem from="1692099194807" duration="191000" />
+      <workItem from="1692099881605" duration="1831000" />
+      <workItem from="1692519706616" duration="9825000" />
+      <workItem from="1692622767923" duration="566000" />
+      <workItem from="1692706511404" duration="2253000" />
+      <workItem from="1692878067980" duration="2736000" />
+      <workItem from="1692991535202" duration="1736000" />
+      <workItem from="1693251290072" duration="1554000" />
+      <workItem from="1693309406323" duration="5159000" />
+      <workItem from="1693317138874" duration="295000" />
+      <workItem from="1693837282712" duration="695000" />
+      <workItem from="1693900919736" duration="5915000" />
+      <workItem from="1693945730976" duration="633000" />
+      <workItem from="1694162987032" duration="123000" />
+      <workItem from="1694364935579" duration="1526000" />
+      <workItem from="1694369600758" duration="632000" />
+      <workItem from="1694706317214" duration="2955000" />
+      <workItem from="1694714448975" duration="59000" />
+      <workItem from="1694803517194" duration="2409000" />
+      <workItem from="1694856469152" duration="10326000" />
+      <workItem from="1694983165673" duration="480000" />
+      <workItem from="1695292842387" duration="2557000" />
+      <workItem from="1695393394003" duration="5938000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1679155532116</created>
@@ -643,13 +664,35 @@
       <option name="project" value="LOCAL" />
       <updated>1682718974472</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="6 лаба">
+      <created>1687718795212</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1687718795212</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -676,21 +719,6 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="User">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="*" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
@@ -704,7 +732,8 @@
     <MESSAGE value="all commands ready" />
     <MESSAGE value="all" />
     <MESSAGE value="обработка" />
-    <option name="LAST_COMMIT_MESSAGE" value="обработка" />
+    <MESSAGE value="6 лаба" />
+    <option name="LAST_COMMIT_MESSAGE" value="6 лаба" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -713,7 +742,35 @@
           <properties class="java.io.EOFException" package="java.io" />
           <option name="timeStamp" value="7" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="31" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/commands/AddIfMaxCommand.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/commands/RemoveByIdCommand.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/commands/RemoveFirstCommand.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="args" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

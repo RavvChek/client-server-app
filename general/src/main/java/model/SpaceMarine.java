@@ -2,6 +2,7 @@ package model;
 
 
 import exceptions.WrongValuesException;
+import transfers.User;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
@@ -22,6 +23,7 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
     private String achievements; //Поле не может быть null
     private AstartesCategory category; //Поле может быть null
     private Chapter chapter; //Поле не может быть null
+    private String owner;
 
     public SpaceMarine(int id, String name, Coordinates coordinates, ZonedDateTime creationDate, Integer health, int heartCount, String achievements, AstartesCategory category, Chapter chapter) {
         this.id = id;
@@ -33,6 +35,19 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
         this.achievements = achievements;
         this.category = category;
         this.chapter = chapter;
+    }
+
+    public SpaceMarine(int id, String name, Coordinates coordinates, ZonedDateTime creationDate, Integer health, int heartCount, String achievements, AstartesCategory category, Chapter chapter, String user) {
+        this.id = id;
+        this.name = name;
+        this.coordinates = coordinates;
+        this.creationDate = creationDate;
+        this.health = health;
+        this.heartCount = heartCount;
+        this.achievements = achievements;
+        this.category = category;
+        this.chapter = chapter;
+        owner = user;
     }
 
     public SpaceMarine() {
@@ -128,6 +143,14 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
         this.getChapter().setMarinesCount(mrc);
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -153,9 +176,9 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
                 ", achievements='" + achievements + '\'' +
                 ", category=" + category +
                 ", chapter=" + chapter +
+                ", owner='" + owner + '\'' +
                 '}';
     }
-
 
     @Override
     public int compareTo(SpaceMarine sp) {
@@ -218,8 +241,8 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
             if (health == null) {
                 System.out.println();
             } else {
-                if (health < 0 || health > Integer.MAX_VALUE) {
-                    throw new WrongValuesException("Поле health не может быть меньше 0");
+                if (health <= 0 || health > Integer.MAX_VALUE) {
+                    throw new WrongValuesException("Поле health не может быть меньше или равно 0");
                 }
 
             }

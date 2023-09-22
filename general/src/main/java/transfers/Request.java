@@ -9,6 +9,7 @@ public class Request implements Serializable {
     private String commandName;
     private String args = "";
     private SpaceMarine object = null;
+    private User user;
 
     public Request() {
 
@@ -34,6 +35,19 @@ public class Request implements Serializable {
         this.object = object;
     }
 
+    public Request(String commandName, String args, User user) {
+        this.commandName = commandName.trim();
+        this.args = args;
+        this.user = user;
+    }
+
+    public Request(String commandName, String args, SpaceMarine object, User user) {
+        this.commandName = commandName.trim();
+        this.args = args.trim();
+        this.object = object;
+        this.user = user;
+    }
+
     public String getCommandName() {
         return commandName;
     }
@@ -46,11 +60,14 @@ public class Request implements Serializable {
         return object;
     }
 
+    public User getUser() {
+        return user;
+    }
+
     public boolean isEmpty() {
-        if(commandName == null || args == null){
+        if (commandName == null || args == null) {
             return true;
-        }
-        else {
+        } else {
             return commandName.isEmpty() && args.isEmpty() && object == null;
         }
     }
